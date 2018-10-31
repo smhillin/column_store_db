@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
+    <generated>
+      <config projectName="final_project" targetName="server" />
+      <config projectName="final_project" targetName="test" />
+      <config projectName="final_project" targetName="client" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="Release" CONFIG_NAME="Release" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="539143da-7236-4193-b0b0-6636daf1b058" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/cs165-2018-base/src/client.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/cs165-2018-base/src/client.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/cs165-2018-base/src/client_context.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/cs165-2018-base/src/client_context.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/cs165-2018-base/src/mydb_manager.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/cs165-2018-base/src/mydb_manager.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/cs165-2018-base/src/parse.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/cs165-2018-base/src/parse.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/final_project.dir/C.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/final_project.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/final_project.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/final_project.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/final_project.dir/cs165-2018-base/src/client.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/final_project.dir/cs165-2018-base/src/client_context.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/final_project.dir/cs165-2018-base/src/main.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/final_project.dir/cs165-2018-base/src/mydb_manager.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/final_project.dir/cs165-2018-base/src/parse.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/final_project.dir/cs165-2018-base/src/server.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/final_project.dir/cs165-2018-base/src/utils.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/final_project.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/final_project.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/final_project.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/final_project.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/final_project.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/cs165-2018-base/src/client_context.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/cs165-2018-base/src/client_context.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/cs165-2018-base/src/mydb_manager.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/cs165-2018-base/src/mydb_manager.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/cs165-2018-base/src/parse.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/cs165-2018-base/src/parse.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/cs165-2018-base/src/server.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/cs165-2018-base/src/server.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/servere.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/servere.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/servere.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/servere.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/servere.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/servere.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/servere.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/cs165-2018-base/src/client_context.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/cs165-2018-base/src/client_context.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/cs165-2018-base/src/mydb_manager.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/cs165-2018-base/src/mydb_manager.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/cs165-2018-base/src/parse.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/cs165-2018-base/src/parse.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/client" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/client" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/client.dSYM/Contents/Resources/DWARF/client" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/client.dSYM/Contents/Resources/DWARF/client" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/repo.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/repo.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/server" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/server.dSYM/Contents/Resources/DWARF/server" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/server.dSYM/Contents/Resources/DWARF/server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/test" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs165-2018-base" beforeDir="false" afterPath="$PROJECT_DIR$/cs165-2018-base" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs165-2018-base/src/client_context.c" beforeDir="false" afterPath="$PROJECT_DIR$/cs165-2018-base/src/client_context.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs165-2018-base/src/include/client_context.h" beforeDir="false" afterPath="$PROJECT_DIR$/cs165-2018-base/src/include/client_context.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs165-2018-base/src/include/mydb_manager.h" beforeDir="false" afterPath="$PROJECT_DIR$/cs165-2018-base/src/include/mydb_manager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs165-2018-base/src/mydb_manager.c" beforeDir="false" afterPath="$PROJECT_DIR$/cs165-2018-base/src/mydb_manager.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs165-2018-base/src/parse.c" beforeDir="false" afterPath="$PROJECT_DIR$/cs165-2018-base/src/parse.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs165-2018-base/src/server.c" beforeDir="false" afterPath="$PROJECT_DIR$/cs165-2018-base/src/server.c" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <ignored path="$PROJECT_DIR$/cmake-build-release/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FUSProjectUsageTrigger">
+    <session id="1175361532">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Makefile" value="17" />
+          <entry key="c" value="21154" />
+          <entry key="dsl" value="18" />
+          <entry key="gitignore" value="85" />
+          <entry key="h" value="1820" />
+          <entry key="m" value="95" />
+          <entry key="md" value="391" />
+          <entry key="txt" value="421" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CMakeLists.txt" value="337" />
+          <entry key="Doxygen file" value="9" />
+          <entry key="Markdown" value="391" />
+          <entry key="ObjectiveC" value="23060" />
+          <entry key="PLAIN_TEXT" value="204" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="Makefile" value="6" />
+          <entry key="c" value="78" />
+          <entry key="client_logs" value="3" />
+          <entry key="csv" value="40" />
+          <entry key="d" value="1" />
+          <entry key="dsl" value="19" />
+          <entry key="exp" value="1" />
+          <entry key="gitignore" value="2" />
+          <entry key="h" value="56" />
+          <entry key="md" value="2" />
+          <entry key="out" value="3" />
+          <entry key="server" value="3" />
+          <entry key="txt" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CMakeLists.txt" value="4" />
+          <entry key="CSV" value="33" />
+          <entry key="Markdown" value="2" />
+          <entry key="ObjectiveC" value="134" />
+          <entry key="PLAIN_TEXT" value="50" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.49744377">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/cs165-2018-base/project_tests/test01.dsl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="4" column="22" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="91" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/cs165-2018-base/project_tests/data2.csv">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="375">
+                  <caret line="25" selection-start-line="25" selection-end-line="25" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/client_context.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1575">
+                  <caret line="105" column="39" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
+                  <folding>
+                    <element signature="e#126#409#0" />
+                    <element signature="e#453#601#0" />
+                    <element signature="e#603#670#0" />
+                    <element signature="e#603#1211#0" />
+                    <element signature="e#1215#1277#0" />
+                    <element signature="e#1215#1603#0" />
+                    <element signature="e#1605#1641#0" />
+                    <element signature="e#2128#2166#0" />
+                    <element signature="e#2466#2740#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/include/client_context.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="270">
+                  <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/include/mydb_manager.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="882">
+                  <caret line="225" column="9" selection-start-line="225" selection-start-column="9" selection-end-line="225" selection-end-column="9" />
+                  <folding>
+                    <element signature="e#0#2#0" />
+                    <element signature="e#512#767#0" />
+                    <element signature="e#777#823#0" />
+                    <element signature="e#844#1089#0" />
+                    <element signature="e#1099#1720#0" />
+                    <element signature="e#1731#1858#0" />
+                    <element signature="e#1868#2233#0" />
+                    <element signature="e#2244#2373#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/cs165-2018-base/project_tests/test03.dsl">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/cs165-2018-base/project_tests/test02.dsl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="45">
+                  <caret line="3" selection-start-line="3" selection-end-line="3" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/client.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="660">
+                  <caret line="44" selection-start-line="44" selection-end-line="44" />
+                  <folding>
+                    <element signature="e#279#679#0" />
+                    <element signature="e#680#699#0" expanded="true" />
+                    <element signature="e#1801#2061#0" />
+                    <element signature="e#1801#5012#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/utils.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1005">
+                  <caret line="67" column="1" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
+                  <folding>
+                    <element signature="e#284#444#0" />
+                    <element signature="e#284#748#0" />
+                    <element signature="e#749#905#0" />
+                    <element signature="e#749#1193#0" />
+                    <element signature="e#1195#1363#0" />
+                    <element signature="e#1195#1669#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/parse.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="8085">
+                  <caret line="539" column="42" selection-start-line="539" selection-start-column="42" selection-end-line="539" selection-end-column="42" />
+                  <folding>
+                    <element signature="e#0#315#0" />
+                    <element signature="e#339#358#0" expanded="true" />
+                    <element signature="e#898#902#0" />
+                    <element signature="e#1838#1890#0" />
+                    <element signature="e#1838#2072#0" />
+                    <element signature="e#2074#2321#0" />
+                    <element signature="e#2074#2511#0" />
+                    <element signature="e#2512#2555#0" />
+                    <element signature="e#2512#2994#0" />
+                    <element signature="e#2995#3039#0" />
+                    <element signature="e#2995#3492#0" />
+                    <element signature="e#3494#3533#0" />
+                    <element signature="e#3494#3814#0" />
+                    <element signature="e#3816#3982#0" />
+                    <element signature="e#3816#6127#0" />
+                    <element signature="e#6129#6182#0" />
+                    <element signature="e#6129#6850#0" />
+                    <element signature="e#6852#6878#0" />
+                    <element signature="e#6852#7967#0" />
+                    <element signature="e#8057#9505#0" />
+                    <element signature="e#9508#11031#0" />
+                    <element signature="e#11033#11205#0" />
+                    <element signature="e#11033#12154#0" />
+                    <element signature="e#12157#12275#0" />
+                    <element signature="e#12157#13708#0" />
+                    <element signature="e#13710#13856#0" />
+                    <element signature="e#13710#16098#0" />
+                    <element signature="e#18176#20023#0" />
+                    <element signature="e#18162#18199#0" />
+                    <element signature="e#18162#19625#0" />
+                    <element signature="e#19629#20066#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/server.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="855">
+                  <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
+                  <folding>
+                    <element signature="e#0#582#0" />
+                    <element signature="e#606#624#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/mydb_manager.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="882">
+                  <caret line="264" column="1" selection-start-line="264" selection-start-column="1" selection-end-line="264" selection-end-column="1" />
+                  <folding>
+                    <element signature="e#0#2#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="405">
+                  <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>current</find>
+      <find>relational</find>
+      <find>create_statu</find>
+      <find>current_db</find>
+      <find>DataType</find>
+      <find>main</find>
+      <find>setup</find>
+      <find>execute_DbOperator</find>
+      <find>insert</find>
+      <find>col_size</find>
+      <find>token</find>
+      <find>relation</find>
+      <find>strip_comman</find>
+      <find>white</find>
+      <find>send_message</find>
+      <find>log</find>
+      <find>11</find>
+      <find>get</find>
+      <find>Create query has already occured</find>
+      <find>query</find>
+      <find>QUERY:</find>
+      <find>parse_create_db</find>
+      <find>db has been created</find>
+      <find>create_db</find>
+      <find>occured</find>
+      <find>load</find>
+      <find>row inserted</find>
+      <find>cs165_log</find>
+      <find>table not found</find>
+      <find>save</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/cs165-2018-base" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/main.c" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/hash_table.h" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/hash_table.c" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/include/cs165_api.h" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/mydb_manager.h" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/db_manager.c" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/project_tests/test000.txt" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/server/server.c" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/archived/test.txt" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/Makefile" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/project_test2/test.csv" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/include/utils.h" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/project_tests/test000.dsl" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/repo.csv" />
+        <option value="$PROJECT_DIR$/repo.csv" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/include/parse.h" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/main.c" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/.gitignore" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/README.md" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/project_tests/test025.dsl" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/project_test2/test025.dsl" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/project_test2/test_command_line.txt" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/test025.txt" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/test025.dsl" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/client.c" />
+        <option value="$PROJECT_DIR$/cmake-build-debug/repo.csv" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/project_tests/test01.dsl" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/data/repo.csv" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/include/client_context.h" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/client_context.c" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/server.c" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/parse.c" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/include/mydb_manager.h" />
+        <option value="$PROJECT_DIR$/cs165-2018-base/src/mydb_manager.c" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1701" />
+    <option name="y" value="273" />
+    <option name="width" value="1937" />
+    <option name="height" value="1567" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="final_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="final_project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="final_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="final_project" type="462c0819:PsiDirectoryNode" />
+              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="preferences&#9;ACTION&#9;TemplateProjectProperties&#10;terminal&#9;ACTION&#9;ActivateTerminalToolWindow&#10;valgrind&#9;FILE&#9;file:///Library/Frameworks/R.framework/PrivateHeaders/vg/valgrind.h" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="language.cpp.clangd" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cs165-2018-base/archived" />
+      <recent name="$PROJECT_DIR$/cs165-2018-base/src" />
+      <recent name="$PROJECT_DIR$/cs165-2018-base/project_test2" />
+      <recent name="$PROJECT_DIR$/cs165-2018-base/server" />
+      <recent name="$PROJECT_DIR$/cs165-2018-base/src/include" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cs165-2018-base/src" />
+      <recent name="$PROJECT_DIR$/cs165-2018-base/project_tests" />
+      <recent name="$PROJECT_DIR$/cs165-2018-base/server" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.client">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="file://$PROJECT_DIR$/cs165-2018-base/src" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="final_project" RUN_TARGET_NAME="server" EXPLICIT_BUILD_TARGET_NAME="all">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="client" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="file://$PROJECT_DIR$/cs165-2018-base" PASS_PARENT_ENVS_2="true" PROJECT_NAME="final_project" TARGET_NAME="client" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="final_project" RUN_TARGET_NAME="client">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="server" type="CMakeRunConfiguration" factoryName="Application" editBeforeRun="true" WORKING_DIR="file://$PROJECT_DIR$/cs165-2018-base/src" PASS_PARENT_ENVS_2="true" PROJECT_NAME="final_project" TARGET_NAME="server" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="final_project" RUN_TARGET_NAME="server">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="final_project" TARGET_NAME="test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="final_project" RUN_TARGET_NAME="test">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server/Client Debug" type="CompoundRunConfigurationType" factoryName="Compound Run Configuration">
+      <toRun type="CMakeRunConfiguration" name="client" targetId="CMakeBuildProfile:Debug" />
+      <toRun type="CMakeRunConfiguration" name="server" targetId="CMakeBuildProfile:Debug" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Compound.Server/Client Debug" />
+      <item itemvalue="Application.Build All" />
+      <item itemvalue="Application.client" />
+      <item itemvalue="Application.server" />
+      <item itemvalue="Application.test" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="539143da-7236-4193-b0b0-6636daf1b058" name="Default Changelist" comment="" />
+      <created>1538767193988</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1538767193988</updated>
+      <workItem from="1538767195801" duration="49994000" />
+      <workItem from="1539298137222" duration="107149000" />
+      <workItem from="1540067775397" duration="20179000" />
+      <workItem from="1540175492595" duration="465000" />
+      <workItem from="1540176231751" duration="12152000" />
+      <workItem from="1540748813557" duration="15305000" />
+      <workItem from="1540914957757" duration="15531000" />
+      <workItem from="1540956642710" duration="455000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="221230000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1701" y="273" width="1937" height="1567" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16675462" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49780124" weight="0.32911393" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4776845" weight="0.39783105" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.423219" visible="true" weight="0.3498305" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49845338" weight="0.32819635" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.48601583" weight="0.380339" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.576781" side_tool="true" visible="true" weight="0.3498305" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.3583993" side_tool="true" weight="0.371519" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49956024" weight="0.32979977" />
+      <window_info anchor="bottom" id="CMake" order="12" sideWeight="0.44729802" weight="0.371261" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1631664" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.56198347" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39008266" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32949153" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.4033058" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.41487604" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.37355372" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/cs165-2018-base/archived/hash_table.c</url>
+          <line>26</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="current_db" language="ObjectiveC" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>current_db</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>dbo-&gt;operator_fields.insert_operator.values</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>insert_table.operator_fields.insert_operator.values</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>db_table_col[i]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>db_table[i]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file:///Library/Frameworks/R.framework/PrivateHeaders/vg/valgrind.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/archived/hash_table.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/archived/hash_table.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/archived/project0/main.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/server/client_context.h" />
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/test000.out">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/archived/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/project_tests/test04.dsl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/project_tests/data3.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/project_tests/data1.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/project_test2/test.csv">
+      <provider editor-type-id="text-editor">
+        <state>
+          <caret column="55" selection-start-column="55" selection-end-column="55" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/project_test2/out/test.out">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/project_tests/test000.dsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/repo.csv" />
+    <entry file="file://$PROJECT_DIR$/repo.csv" />
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/include/parse.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/test.out">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="209">
+            <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include/stdarg.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/Logs/client_logs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/include/message.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/include/cs165_api.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="32" column="21" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/include/common.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/project_test2/test_command_line.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="894">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/test025.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/include/utils.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="40" column="37" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/Makefile" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-release/Makefile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/test025.dsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/.deps/_cc.d">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/server">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/db_manager.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="15" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/repo.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/data/repo.csv">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="20" lean-forward="true" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/project_tests/test03.exp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/project_tests/test01.dsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/project_tests/data2.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-text-editor">
+        <state relative-caret-position="-13991">
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/client_context.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1575">
+          <caret line="105" column="39" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
+          <folding>
+            <element signature="e#126#409#0" />
+            <element signature="e#453#601#0" />
+            <element signature="e#603#670#0" />
+            <element signature="e#603#1211#0" />
+            <element signature="e#1215#1277#0" />
+            <element signature="e#1215#1603#0" />
+            <element signature="e#1605#1641#0" />
+            <element signature="e#2128#2166#0" />
+            <element signature="e#2466#2740#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/include/client_context.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/project_tests/test03.dsl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/project_tests/test02.dsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/client.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="e#279#679#0" />
+            <element signature="e#680#699#0" expanded="true" />
+            <element signature="e#1801#2061#0" />
+            <element signature="e#1801#5012#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/utils.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="67" column="1" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
+          <folding>
+            <element signature="e#284#444#0" />
+            <element signature="e#284#748#0" />
+            <element signature="e#749#905#0" />
+            <element signature="e#749#1193#0" />
+            <element signature="e#1195#1363#0" />
+            <element signature="e#1195#1669#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/include/mydb_manager.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="225" column="9" selection-start-line="225" selection-start-column="9" selection-end-line="225" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#2#0" />
+            <element signature="e#512#767#0" />
+            <element signature="e#777#823#0" />
+            <element signature="e#844#1089#0" />
+            <element signature="e#1099#1720#0" />
+            <element signature="e#1731#1858#0" />
+            <element signature="e#1868#2233#0" />
+            <element signature="e#2244#2373#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/parse.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8085">
+          <caret line="539" column="42" selection-start-line="539" selection-start-column="42" selection-end-line="539" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#315#0" />
+            <element signature="e#339#358#0" expanded="true" />
+            <element signature="e#898#902#0" />
+            <element signature="e#1838#1890#0" />
+            <element signature="e#1838#2072#0" />
+            <element signature="e#2074#2321#0" />
+            <element signature="e#2074#2511#0" />
+            <element signature="e#2512#2555#0" />
+            <element signature="e#2512#2994#0" />
+            <element signature="e#2995#3039#0" />
+            <element signature="e#2995#3492#0" />
+            <element signature="e#3494#3533#0" />
+            <element signature="e#3494#3814#0" />
+            <element signature="e#3816#3982#0" />
+            <element signature="e#3816#6127#0" />
+            <element signature="e#6129#6182#0" />
+            <element signature="e#6129#6850#0" />
+            <element signature="e#6852#6878#0" />
+            <element signature="e#6852#7967#0" />
+            <element signature="e#8057#9505#0" />
+            <element signature="e#9508#11031#0" />
+            <element signature="e#11033#11205#0" />
+            <element signature="e#11033#12154#0" />
+            <element signature="e#12157#12275#0" />
+            <element signature="e#12157#13708#0" />
+            <element signature="e#13710#13856#0" />
+            <element signature="e#13710#16098#0" />
+            <element signature="e#18176#20023#0" />
+            <element signature="e#18162#18199#0" />
+            <element signature="e#18162#19625#0" />
+            <element signature="e#19629#20066#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/server.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#582#0" />
+            <element signature="e#606#624#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/mydb_manager.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="264" column="1" selection-start-line="264" selection-start-column="1" selection-end-line="264" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#2#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

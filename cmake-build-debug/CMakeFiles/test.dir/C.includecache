@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../cs165-2018-base/src/include/client_context.h
+mydb_manager.h
+../cs165-2018-base/src/include/mydb_manager.h
+
+../cs165-2018-base/src/include/mydb_manager.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+../cs165-2018-base/src/include/utils.h
+stdarg.h
+-
+stdio.h
+-
+
+/Users/Shaun/CLionProjects/final_project/cs165-2018-base/src/mydb_manager.c
+mydb_manager.h
+/Users/Shaun/CLionProjects/final_project/cs165-2018-base/src/mydb_manager.h
+client_context.h
+/Users/Shaun/CLionProjects/final_project/cs165-2018-base/src/client_context.h
+utils.h
+/Users/Shaun/CLionProjects/final_project/cs165-2018-base/src/utils.h
+

@@ -1,0 +1,5 @@
+/Users/Shaun/CLionProjects/final_project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Shaun/CLionProjects/final_project/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Shaun/CLionProjects/final_project/cmake-build-debug/CMakeFiles/test.dir
+/Users/Shaun/CLionProjects/final_project/cmake-build-debug/CMakeFiles/server.dir
+/Users/Shaun/CLionProjects/final_project/cmake-build-debug/CMakeFiles/client.dir
