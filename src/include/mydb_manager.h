@@ -1,5 +1,6 @@
 //
 // Created by shaun hillin on 10/8/18.
+//Gsalhab98!
 //
 
 #ifndef FINAL_PROJECT_MYDB_MANAGER_H
@@ -9,7 +10,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define DB_FILE "/Users/Shaun/CLionProjects/final_project/cs165-2018-base/src/data/repo.csv"  //persistant store
+#define DB_FILE "/Users/Shaun/CLionProjects/final_project/src/data/repo.csv"  //persistant store
 #define MAX_NUM_TABLE 5
 
 #define MAX_COL_NUM 10
@@ -224,7 +225,7 @@ typedef struct SelectOperator {
     Table* table;
     char* low;
     char* high;
-    PooledVar* pooledVar;
+    Char* pooledVar;
 } SelectOperator;
 
 /*
@@ -301,7 +302,7 @@ Status* create_col(char* col_name, Table* tb, Status *ret_status);
  * Given a table name fetches it from the db.
  */
 
-Table* fetch_table(Db *db, char* table_name);
+Table* fetch_table(char* table_name);
 
 /*
  * Given a column insert a number into that column

@@ -16,6 +16,8 @@ char* strip_command(char* tokenizer);
 
 char* strip_url(char* arguments);
 
+char* strip_par(char* arguments);
+
 char* strip_var(char* tokenizer);
 
 #endif

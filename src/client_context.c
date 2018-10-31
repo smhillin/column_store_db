@@ -128,6 +128,14 @@ char* strip_url(char* arguments){
 
 }
 
+char* strip_par(char* arguments){
+    char* stripped = malloc(1024);
+    for (int i = 0; arguments[i] != ')'; ++i){
+        stripped[i] = arguments[i];
+    }
+    return(stripped);
+}
+
 /**
 *  Getting started hint:
 * 		What other entities are context related (and contextual with respect to what scope in your design)?

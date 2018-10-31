@@ -293,7 +293,7 @@ message_status parse_create_col(char* create_arguments) {
         return QUERY_UNSUPPORTED;
     }
     //retrieve pointer to table
-    Table *working_tbl = fetch_table(current_db, tbl_name);
+    Table *working_tbl = fetch_table(tbl_name);
     Status create_status;
     create_col(col_name, working_tbl, &create_status);
     if (create_status.code != OK) {
@@ -461,7 +461,7 @@ DbOperator* parse_insert(char* query_command, message* send_message) {
         char* db_name = strip_db(db_table_name);
 
         // lookup the table and make sure it exists. 
-        Table* insert_table = fetch_table(current_db,table_name);
+        Table* insert_table = fetch_table(table_name);
         if (insert_table == NULL) {
             send_message->status = OBJECT_NOT_FOUND;
             return NULL;
@@ -494,9 +494,8 @@ DbOperator* parse_insert(char* query_command, message* send_message) {
 
 
 DbOperator* parse_select(char* var_name,char* query_command, message* send_message) {
-    //create pooled var entry
-    PooledVar *pooledVar = malloc(sizeof(PooledVar));
-    pooledVar->name = var_name;
+    //create pooled var name
+    char* pooledVar = var_name;
 
     char *token = NULL;
     // check for insert statement if so strip
@@ -525,7 +524,7 @@ DbOperator* parse_select(char* var_name,char* query_command, message* send_messa
         char *select_col = strip_col(db_table_name);
 
         // lookup the table and make sure it exists.
-        Table *insert_table = fetch_table(current_db, table_name);
+        Table *insert_table = fetch_table(table_name);
         if (insert_table == NULL) {
             send_message->status = OBJECT_NOT_FOUND;
             return NULL;
@@ -535,6 +534,7 @@ DbOperator* parse_select(char* var_name,char* query_command, message* send_messa
 
         // strip out high select
         char* high = next_token(command_index, &send_message->status);
+        high = strip_par(high);
 
         //checks to make sure we have at least one value to select
         if (low == NULL && high == NULL) {
@@ -546,8 +546,8 @@ DbOperator* parse_select(char* var_name,char* query_command, message* send_messa
         DbOperator *dbo = malloc(sizeof(DbOperator));
         dbo->type = SELECT;
         dbo->operator_fields.select_operator.pooledVar = pooledVar;
-        dbo->operator_fields.select_operator.table = table_name;
-        dbo->operator_fields.select_operator.col = select_col;
+        dbo->operator_fields.select_operator.table = fetch_table(table_name);
+        dbo->operator_fields.select_operator.col = fetch_column(fetch_table(table_name),select_col);
         //creates a value for number of calue inserts to be used later
         dbo->operator_fields.select_operator.low = low;
         dbo->operator_fields.select_operator.high = high;
@@ -591,7 +591,7 @@ DbOperator* parse_fetch(char* var_name, char* query_command, message* send_messa
         char *fetch_col = strip_col(db_table_name);
 
         // lookup the table and make sure it exists.
-        Table *insert_table = fetch_table(current_db, table_name);
+        Table *insert_table = fetch_table(table_name);
         if (insert_table == NULL) {
             send_message->status = OBJECT_NOT_FOUND;
             return NULL;
@@ -767,16 +767,14 @@ DbOperator* parse_command(char* query_command, message* send_message, int client
       //here we strip off temporary storage variable name  for select and fetch queries
       else {
         create_pool();  //create the variable pool
-        char* temp_var = strip_var(query_command);
         //trim new variable plus = sign
-        query_command += sizeof(temp_var)/ sizeof(char*)+1;
         if (strncmp(query_command, "select", 6) == 0){
-            query_command += 5;
-            dbo = parse_select(temp_var,query_command, send_message);
+            query_command += 6;
+            dbo = parse_select(handle,query_command, send_message);
         }
         else if(strncmp(query_command, "fetch", 5) == 0){
             query_command += 5;
-            dbo = parse_fetch(temp_var, query_command, send_message);
+            dbo = parse_fetch(handle, query_command, send_message);
 
         }
     }

@@ -52,11 +52,11 @@ char* execute_DbOperator(DbOperator* query) {
     }
     else if (query->type == SELECT) {
         Result* result = select_val(query);
-        store_var(query->operator_fields.fetch_operator.col->name, result);
+        store_var(query->operator_fields.select_operator.pooledVar, result);
     }
     else if (query->type == FETCH) {
         Result* result = fetch(query);
-        store_var(query->operator_fields.fetch_operator.col->name,result);
+        store_var(query->operator_fields.fetch_operator.pooledVar,result);
     }
 
     else if (query->type == FETCH) {

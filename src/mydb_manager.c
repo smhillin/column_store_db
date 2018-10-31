@@ -26,6 +26,8 @@ VarPool *varpool;
 
 Status create_pool(){
     varpool = malloc(sizeof(VarPool));
+    varpool->pooledVar= (malloc(1024));
+    varpool->pool_size = 0;
     struct Status ret_status;
     ret_status.code = OK;
     return ret_status;
@@ -102,10 +104,10 @@ Column* fetch_column(Table *tb, char* col_name){
  * Fetch table form db
  */
 
-Table* fetch_table(Db *db, char* table_name){
+Table* fetch_table(char* table_name){
     Table *current_tb;
-    for(int i=0; i < db->tables_size; ++i){
-        current_tb = db->tables[i];
+    for(int i=0; i < current_db->tables_size; ++i){
+        current_tb = current_db->tables[i];
         if (strcmp(current_tb->name, table_name) == 0)
             return(current_tb);
         printf("Table Not Found\n");
@@ -116,7 +118,7 @@ Table* fetch_table(Db *db, char* table_name){
 
 void relational_insert(DbOperator* query) {
     char *table_name = query->operator_fields.insert_operator.table->name;
-    Table *working_table = fetch_table(current_db, table_name);  //fetch table to work with
+    Table *working_table = fetch_table(table_name);  //fetch table to work with
     int *values = query->operator_fields.insert_operator.values;  //array of values to be inserted
     //Column** table_col = working_table->columns;  //pointer to columns
     working_table->table_length+= 1;  //add length to table
@@ -171,9 +173,10 @@ int* select_high(Column* col,int high){
     int* temp_pos=malloc(sizeof(int)*INIT_COL_SIZE);
     int j=0;
     for (int i=0; i < col->col_size; ++i){
-        if (col->data[i] < high)
+        if (col->data[i] < high) {
             temp_pos[j] = i;
-        ++j;
+            ++j;
+        }
     }
     return(temp_pos);
 }
@@ -203,11 +206,11 @@ Result* select_val(DbOperator* query) {
     result->data_type =  INT;
 
     //temporary position array
-    if (strcmp(low_c,"null")){
+    if (strcmp(low_c,"null")==0){
         int high = atoi(query->operator_fields.select_operator.high);
         result->payload=select_high(col,high);
     }
-    else if (strcmp(high_c,"null")){
+    else if (strcmp(high_c,"null")==0){
         int low = atoi(query->operator_fields.select_operator.low);
         result->payload=select_low(col,low);
     }
@@ -216,7 +219,7 @@ Result* select_val(DbOperator* query) {
         int low = atoi(query->operator_fields.select_operator.low);
         result->payload=select_high_low(col, low, high);
     }
-    result->num_tuples  = sizeof(result->payload)/ sizeof(INT);
+    result->num_tuples  = sizeof(result->payload);
     return(result);
 }
 /*
