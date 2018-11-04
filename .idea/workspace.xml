@@ -2,9 +2,9 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
+      <config projectName="final_project" targetName="client" />
       <config projectName="final_project" targetName="server" />
       <config projectName="final_project" targetName="test" />
-      <config projectName="final_project" targetName="client" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -16,39 +16,27 @@
   <component name="ChangeListManager">
     <list default="true" id="539143da-7236-4193-b0b0-6636daf1b058" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/cs165-2018-base/src/client.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/cs165-2018-base/src/client_context.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/cs165-2018-base/src/mydb_manager.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/cs165-2018-base/src/parse.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/cs165-2018-base/src/utils.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/cs165-2018-base/src/client_context.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/cs165-2018-base/src/mydb_manager.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/cs165-2018-base/src/parse.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/cs165-2018-base/src/server.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/cs165-2018-base/src/utils.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/cs165-2018-base/src/client_context.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/cs165-2018-base/src/main.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/cs165-2018-base/src/mydb_manager.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/cs165-2018-base/src/parse.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/cs165-2018-base/src/utils.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/src/client_context.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/src/client_context.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/src/mydb_manager.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/src/mydb_manager.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/client.dir/src/parse.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/src/client_context.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/src/client_context.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/src/mydb_manager.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/src/mydb_manager.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/src/parse.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/src/server.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/src/server.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/src/client_context.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/src/client_context.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/src/mydb_manager.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/src/mydb_manager.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/src/parse.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/src/parse.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/client" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/client" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/server" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/server" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/test" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/test" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client_context.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_context.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repo.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/include/client_context.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/client_context.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/include/mydb_manager.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/mydb_manager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mydb_manager.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/mydb_manager.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parse.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/cmake-build-release/" />
@@ -63,7 +51,7 @@
     <session id="1175361532">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.17" value="1" />
@@ -72,18 +60,19 @@
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Makefile" value="17" />
-          <entry key="c" value="21397" />
+          <entry key="c" value="24102" />
           <entry key="csv" value="4" />
-          <entry key="dsl" value="22" />
+          <entry key="dsl" value="43" />
           <entry key="gitignore" value="85" />
-          <entry key="h" value="1833" />
-          <entry key="m" value="102" />
+          <entry key="h" value="1992" />
+          <entry key="m" value="363" />
           <entry key="md" value="391" />
           <entry key="txt" value="421" />
         </counts>
@@ -94,47 +83,52 @@
           <entry key="CSV" value="4" />
           <entry key="Doxygen file" value="9" />
           <entry key="Markdown" value="391" />
-          <entry key="ObjectiveC" value="23323" />
-          <entry key="PLAIN_TEXT" value="208" />
+          <entry key="ObjectiveC" value="26448" />
+          <entry key="PLAIN_TEXT" value="229" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Makefile" value="6" />
-          <entry key="c" value="78" />
+          <entry key="c" value="80" />
           <entry key="client_logs" value="3" />
-          <entry key="csv" value="42" />
+          <entry key="csv" value="52" />
           <entry key="d" value="1" />
-          <entry key="dsl" value="21" />
-          <entry key="exp" value="1" />
+          <entry key="dsl" value="36" />
+          <entry key="exp" value="2" />
           <entry key="gitignore" value="3" />
           <entry key="h" value="56" />
           <entry key="md" value="2" />
           <entry key="out" value="3" />
           <entry key="server" value="3" />
-          <entry key="txt" value="9" />
+          <entry key="txt" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CMakeLists.txt" value="4" />
-          <entry key="CSV" value="35" />
+          <entry key="CSV" value="45" />
           <entry key="Markdown" value="2" />
-          <entry key="ObjectiveC" value="134" />
-          <entry key="PLAIN_TEXT" value="53" />
+          <entry key="ObjectiveC" value="136" />
+          <entry key="PLAIN_TEXT" value="70" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.39772007">
+    <splitter split-orientation="horizontal" split-proportion="0.47087377">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project_test2/data3.csv">
-              <provider selected="true" editor-type-id="csv-text-editor">
-                <state>
-                  <caret column="55" selection-start-column="55" selection-end-column="55" />
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/project_tests/test04.dsl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
                 </state>
               </provider>
             </entry>
@@ -142,8 +136,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/client_context.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1440">
-                  <caret line="135" column="21" selection-start-line="135" selection-start-column="21" selection-end-line="135" selection-end-column="21" />
+                <state relative-caret-position="558">
+                  <caret line="150" selection-start-line="150" selection-end-line="150" />
                   <folding>
                     <element signature="e#126#409#0" />
                     <element signature="e#453#601#0" />
@@ -159,66 +153,35 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/include/client_context.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="33" />
+                <state relative-caret-position="300">
+                  <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/include/mydb_manager.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3577">
+                  <caret line="359" column="36" selection-start-line="359" selection-start-column="36" selection-end-line="359" selection-end-column="36" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/project_tests/data2.csv">
+              <provider selected="true" editor-type-id="csv-text-editor">
+                <state>
+                  <caret column="18" selection-start-column="18" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/include/mydb_manager.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="251">
-                  <caret line="227" column="20" lean-forward="true" selection-start-line="227" selection-start-column="20" selection-end-line="227" selection-end-column="20" />
-                  <folding>
-                    <element signature="e#512#767#0" />
-                    <element signature="e#777#823#0" />
-                    <element signature="e#844#1089#0" />
-                    <element signature="e#1099#1720#0" />
-                    <element signature="e#1731#1858#0" />
-                    <element signature="e#1868#2233#0" />
-                    <element signature="e#2244#2373#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="90">
-                  <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/client.c">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="44" selection-start-line="44" selection-end-line="44" />
-                  <folding>
-                    <element signature="e#279#679#0" />
-                    <element signature="e#680#699#0" expanded="true" />
-                    <element signature="e#1801#2061#0" />
-                    <element signature="e#1801#5012#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/utils.c">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
-                  <caret line="67" column="1" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
-                  <folding>
-                    <element signature="e#284#444#0" />
-                    <element signature="e#284#748#0" />
-                    <element signature="e#749#905#0" />
-                    <element signature="e#1195#1363#0" />
-                    <element signature="e#1195#1669#0" />
-                  </folding>
+                  <caret line="6" selection-start-line="6" selection-end-line="6" />
                 </state>
               </provider>
             </entry>
@@ -227,26 +190,18 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/project_test2/test3.dsl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="32" />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/parse.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="69">
-                  <caret line="496" column="28" selection-start-line="496" selection-start-column="28" selection-end-line="496" selection-end-column="28" />
+                <state relative-caret-position="647">
+                  <caret line="811" selection-start-line="811" selection-start-column="2" selection-end-line="815" selection-end-column="11" />
                   <folding>
                     <element signature="e#0#315#0" />
                     <element signature="e#923#927#0" />
                     <element signature="e#1863#1915#0" />
                     <element signature="e#1863#2097#0" />
                     <element signature="e#2099#2346#0" />
+                    <element signature="e#2099#2536#0" />
                     <element signature="e#2537#2580#0" />
                     <element signature="e#2537#3019#0" />
                     <element signature="e#3020#3064#0" />
@@ -256,34 +211,22 @@
                     <element signature="e#3841#4007#0" />
                     <element signature="e#3841#6152#0" />
                     <element signature="e#6154#6207#0" />
-                    <element signature="e#6154#6875#0" />
-                    <element signature="e#6877#6903#0" />
-                    <element signature="e#6877#7992#0" />
-                    <element signature="e#9533#11056#0" />
-                    <element signature="e#11058#11230#0" />
-                    <element signature="e#11058#12179#0" />
-                    <element signature="e#12182#12300#0" />
-                    <element signature="e#12182#13733#0" />
-                    <element signature="e#13735#13881#0" />
-                    <element signature="e#18390#20459#0" />
-                    <element signature="e#20462#21866#0" />
-                    <element signature="e#21867#21904#0" />
-                    <element signature="e#21867#23330#0" />
-                    <element signature="e#23334#23771#0" />
-                    <element signature="e#23334#26468#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/server.c">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="362">
-                  <caret line="58" column="65" selection-start-line="58" selection-start-column="65" selection-end-line="58" selection-end-column="65" />
-                  <folding>
-                    <element signature="e#0#582#0" />
-                    <element signature="e#606#624#0" expanded="true" />
+                    <element signature="e#6154#6876#0" />
+                    <element signature="e#6878#6904#0" />
+                    <element signature="e#6878#7995#0" />
+                    <element signature="e#8085#9521#0" />
+                    <element signature="e#9524#11047#0" />
+                    <element signature="e#11049#11221#0" />
+                    <element signature="e#11049#12170#0" />
+                    <element signature="e#12173#12291#0" />
+                    <element signature="e#12173#13752#0" />
+                    <element signature="e#13726#13872#0" />
+                    <element signature="e#13904#16048#1" />
+                    <element signature="e#16021#18299#0" />
+                    <element signature="e#18301#20504#0" />
+                    <element signature="e#21516#21553#0" />
+                    <element signature="e#21571#22996#1" />
+                    <element signature="e#22970#23407#0" />
                   </folding>
                 </state>
               </provider>
@@ -292,40 +235,59 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/mydb_manager.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="192" selection-start-line="192" selection-end-line="192" />
+                <state relative-caret-position="558">
+                  <caret line="296" selection-start-line="296" selection-end-line="306" />
                   <folding>
                     <element signature="e#0#2#0" />
-                    <element signature="e#279#420#0" />
-                    <element signature="e#424#909#0" />
-                    <element signature="e#911#1507#0" />
-                    <element signature="e#1952#2020#0" />
-                    <element signature="e#2022#2056#0" />
-                    <element signature="e#2249#2282#0" />
-                    <element signature="e#2596#2625#0" />
-                    <element signature="e#3731#3804#0" />
-                    <element signature="e#3731#4097#0" />
-                    <element signature="e#4100#4164#0" />
-                    <element signature="e#4100#4415#0" />
-                    <element signature="e#4417#4482#0" />
-                    <element signature="e#4739#4791#0" />
-                    <element signature="e#5023#5117#0" />
-                    <element signature="e#6150#6224#0" />
-                    <element signature="e#6150#6755#0" />
-                    <element signature="e#6757#7023#0" />
-                    <element signature="e#7026#7073#0" />
-                    <element signature="e#7026#7459#0" />
-                    <element signature="e#7464#7595#0" />
+                    <element signature="e#279#517#0" />
+                    <element signature="e#521#1168#0" />
+                    <element signature="e#1071#1725#0" />
+                    <element signature="e#1728#2221#0" />
+                    <element signature="e#2223#2291#0" />
+                    <element signature="e#2293#2327#0" />
+                    <element signature="e#2379#2568#1" />
+                    <element signature="e#2520#2553#0" />
+                    <element signature="e#2605#2917#1" />
+                    <element signature="e#2868#2897#0" />
+                    <element signature="e#2949#3249#1" />
+                    <element signature="e#3206#3977#0" />
+                    <element signature="e#3999#4072#0" />
+                    <element signature="e#4119#4407#1" />
+                    <element signature="e#4364#4428#0" />
+                    <element signature="e#4475#4726#1" />
+                    <element signature="e#4682#4747#0" />
+                    <element signature="e#4795#5049#1" />
+                    <element signature="e#5005#5057#0" />
+                    <element signature="e#5104#5354#1" />
+                    <element signature="e#5310#5404#0" />
+                    <element signature="e#5451#6444#1" />
+                    <element signature="e#6399#6473#0" />
+                    <element signature="e#6521#7068#1" />
+                    <element signature="e#7024#7297#0" />
+                    <element signature="e#7301#7348#0" />
+                    <element signature="e#7395#8081#1" />
+                    <element signature="e#8163#8173#0" />
+                    <element signature="e#8231#8363#0" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+            <entry file="file://$PROJECT_DIR$/src/server.c">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="405">
-                  <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+                  <caret line="62" column="31" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+                  <folding>
+                    <element signature="e#0#582#0" />
+                    <element signature="e#922#1552#0" />
+                    <element signature="e#2264#2447#0" />
+                    <element signature="e#2264#4760#0" />
+                    <element signature="e#4762#4929#0" />
+                    <element signature="e#4762#5953#0" />
+                    <element signature="e#5354#5571#0" />
+                    <element signature="e#5955#7010#0" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -336,17 +298,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>current</find>
-      <find>relational</find>
-      <find>create_statu</find>
-      <find>current_db</find>
-      <find>DataType</find>
-      <find>main</find>
-      <find>setup</find>
-      <find>execute_DbOperator</find>
-      <find>insert</find>
-      <find>col_size</find>
-      <find>token</find>
       <find>relation</find>
       <find>strip_comman</find>
       <find>white</find>
@@ -359,13 +310,24 @@
       <find>QUERY:</find>
       <find>parse_create_db</find>
       <find>db has been created</find>
-      <find>create_db</find>
       <find>occured</find>
       <find>load</find>
       <find>row inserted</find>
       <find>cs165_log</find>
       <find>table not found</find>
+      <find>temp_pos</find>
+      <find>create_db</find>
+      <find>create_pool</find>
+      <find>pooledVar-&gt;name = var_name</find>
+      <find>num_tuples</find>
+      <find>result_string</find>
+      <find>store</find>
+      <find>working_table</find>
       <find>save</find>
+      <find>working_table-&gt;columns[i]-&gt;name</find>
+      <find>relational</find>
+      <find>working_table = current_db-&gt;tables[i]</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -411,13 +373,17 @@
         <option value="$PROJECT_DIR$/cs165-2018-base/src/mydb_manager.c" />
         <option value="$PROJECT_DIR$/project_tests/test02.dsl" />
         <option value="$PROJECT_DIR$/project_tests/test03.dsl" />
-        <option value="$PROJECT_DIR$/project_test2/test3.dsl" />
         <option value="$PROJECT_DIR$/project_tests/data2.csv" />
         <option value="$PROJECT_DIR$/project_test2/data3.csv" />
-        <option value="$PROJECT_DIR$/src/include/client_context.h" />
+        <option value="$PROJECT_DIR$/src/utils.c" />
         <option value="$PROJECT_DIR$/src/client_context.c" />
-        <option value="$PROJECT_DIR$/src/mydb_manager.c" />
+        <option value="$PROJECT_DIR$/src/include/client_context.h" />
+        <option value="$PROJECT_DIR$/project_test2/test3.dsl" />
+        <option value="$PROJECT_DIR$/project_test2/test01.dsl" />
+        <option value="$PROJECT_DIR$/project_tests/test01.dsl" />
+        <option value="$PROJECT_DIR$/project_test2/test02.dsl" />
         <option value="$PROJECT_DIR$/src/include/mydb_manager.h" />
+        <option value="$PROJECT_DIR$/src/mydb_manager.c" />
         <option value="$PROJECT_DIR$/src/server.c" />
         <option value="$PROJECT_DIR$/src/parse.c" />
       </list>
@@ -431,10 +397,10 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="625" />
-    <option name="y" value="268" />
-    <option name="width" value="2849" />
-    <option name="height" value="1567" />
+    <option name="x" value="1118" />
+    <option name="y" value="353" />
+    <option name="width" value="2009" />
+    <option name="height" value="1477" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -457,6 +423,12 @@
             <path>
               <item name="final_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="final_project" type="462c0819:PsiDirectoryNode" />
+              <item name="project_test2" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="final_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="final_project" type="462c0819:PsiDirectoryNode" />
               <item name="project_tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -474,16 +446,17 @@
     <property name="settings.editor.selected.configurable" value="language.cpp.clangd" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/cs165-2018-base/src" />
-      <recent name="$PROJECT_DIR$/cs165-2018-base/project_tests" />
-      <recent name="$PROJECT_DIR$/cs165-2018-base/server" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project_test2" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/cs165-2018-base/archived" />
       <recent name="$PROJECT_DIR$/cs165-2018-base/src" />
       <recent name="$PROJECT_DIR$/cs165-2018-base/project_test2" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project_test2" />
+      <recent name="$PROJECT_DIR$/cs165-2018-base/src" />
+      <recent name="$PROJECT_DIR$/cs165-2018-base/project_tests" />
       <recent name="$PROJECT_DIR$/cs165-2018-base/server" />
     </key>
   </component>
@@ -499,7 +472,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Build All">
+  <component name="RunManager" selected="Application.client">
     <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="file://$PROJECT_DIR$/cs165-2018-base/src" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="final_project" RUN_TARGET_NAME="server" EXPLICIT_BUILD_TARGET_NAME="all">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -550,12 +523,13 @@
       <workItem from="1540176231751" duration="12152000" />
       <workItem from="1540748813557" duration="15305000" />
       <workItem from="1540914957757" duration="15531000" />
-      <workItem from="1540956642710" duration="7959000" />
+      <workItem from="1540956642710" duration="48419000" />
+      <workItem from="1541191242614" duration="8842000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228734000" />
+    <option name="totallyTimeSpent" value="278036000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -567,22 +541,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="625" y="268" width="2849" height="1567" extended-state="0" />
+    <frame x="1118" y="353" width="2009" height="1477" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1125757" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16217591" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49780124" weight="0.32911393" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5489847" side_tool="true" visible="true" weight="0.3498305" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.45101532" visible="true" weight="0.3498305" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49845338" weight="0.32819635" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54092526" side_tool="true" weight="0.36784142" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.45856634" weight="0.36784142" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49845338" weight="0.32819384" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.46633416" weight="0.380339" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.5319261" side_tool="true" weight="0.3498305" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" sideWeight="0.4036604" visible="true" weight="0.37298092" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.5963396" side_tool="true" visible="true" weight="0.37298092" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.3583993" side_tool="true" weight="0.371519" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49956024" weight="0.32979977" />
       <window_info anchor="bottom" id="CMake" order="12" sideWeight="0.44729802" weight="0.371261" />
@@ -629,105 +603,79 @@
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/mydb_manager.c</url>
-          <line>174</line>
-          <option name="timeStamp" value="60" />
+          <url>file://$PROJECT_DIR$/src/server.c</url>
+          <line>64</line>
+          <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/mydb_manager.c</url>
-          <line>180</line>
-          <option name="timeStamp" value="61" />
+          <line>217</line>
+          <option name="timeStamp" value="113" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="current_db" language="ObjectiveC" />
-        <watch expression="varpool" language="ObjectiveC" />
+        <watch expression="varPool" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>varpool</expression-string>
+        <expression-string>col-&gt;data[pos[i]]</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>current_db</expression-string>
+        <expression-string>result-&gt;payload[i]</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>dbo-&gt;operator_fields.insert_operator.values</expression-string>
+        <expression-string>result-payload[0]</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>insert_table.operator_fields.insert_operator.values</expression-string>
+        <expression-string>varPool-&gt;pooledVar[1]</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>db_table_col[i]</expression-string>
+        <expression-string>varPool-&gt;</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>db_table[i]</expression-string>
+        <expression-string>current_db-&gt;tables[1]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>varPool-&gt;pooledVar[0]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>pos[i]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>sizeof(sizeof(pos))/ sizeof(pos[0])</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>sizeof(query-&gt;operator_fields.fetch_operator.pos)</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/archived/hash_table.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/archived/project0/main.c">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cs165-2018-base/server/client_context.h" />
-    <entry file="file://$PROJECT_DIR$/src/test000.out">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/archived/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_tests/data3.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_tests/data1.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_test2/test.csv">
-      <provider editor-type-id="text-editor">
-        <state>
-          <caret column="55" selection-start-column="55" selection-end-column="55" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_test2/out/test.out">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_tests/test000.dsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cs165-2018-base/src/repo.csv" />
     <entry file="file://$PROJECT_DIR$/repo.csv" />
     <entry file="file://$PROJECT_DIR$/src/include/parse.h">
       <provider selected="true" editor-type-id="text-editor">
@@ -783,13 +731,6 @@
     <entry file="file://$PROJECT_DIR$/src/include/common.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/project_test2/test_command_line.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="894">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test025.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -825,9 +766,7 @@
     <entry file="file://$PROJECT_DIR$/src/.deps/_cc.d">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server" />
     <entry file="file://$PROJECT_DIR$/src/db_manager.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -835,60 +774,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/repo.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/project_tests/test03.exp">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_tests/test01.dsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="91" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_tests/test04.dsl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/repo.csv">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="20" lean-forward="true" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_tests/data2.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-text-editor">
-        <state relative-caret-position="-13991">
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="67" column="1" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
-          <folding>
-            <element signature="e#284#444#0" />
-            <element signature="e#284#748#0" />
-            <element signature="e#749#905#0" />
-            <element signature="e#1195#1363#0" />
-            <element signature="e#1195#1669#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -899,88 +791,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project_tests/test02.dsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="72" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/project_tests/test23.dsl">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/project_test2/test.csv" />
+    <entry file="file://$PROJECT_DIR$/project_test2/test_command_line.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_test2/data3.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state>
-          <caret column="55" selection-start-column="55" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-          <folding>
-            <element signature="e#279#679#0" />
-            <element signature="e#680#699#0" expanded="true" />
-            <element signature="e#1801#2061#0" />
-            <element signature="e#1801#5012#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_test2/test3.dsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mydb_manager.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="192" selection-start-line="192" selection-end-line="192" />
-          <folding>
-            <element signature="e#0#2#0" />
-            <element signature="e#279#420#0" />
-            <element signature="e#424#909#0" />
-            <element signature="e#911#1507#0" />
-            <element signature="e#1952#2020#0" />
-            <element signature="e#2022#2056#0" />
-            <element signature="e#2249#2282#0" />
-            <element signature="e#2596#2625#0" />
-            <element signature="e#3731#3804#0" />
-            <element signature="e#3731#4097#0" />
-            <element signature="e#4100#4164#0" />
-            <element signature="e#4100#4415#0" />
-            <element signature="e#4417#4482#0" />
-            <element signature="e#4739#4791#0" />
-            <element signature="e#5023#5117#0" />
-            <element signature="e#6150#6224#0" />
-            <element signature="e#6150#6755#0" />
-            <element signature="e#6757#7023#0" />
-            <element signature="e#7026#7073#0" />
-            <element signature="e#7026#7459#0" />
-            <element signature="e#7464#7595#0" />
-          </folding>
+        <state relative-caret-position="1050">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/include/client_context.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="33" />
+        <state relative-caret-position="300">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="80" column="1" selection-start-line="80" selection-start-column="1" selection-end-line="80" selection-end-column="1" />
+          <folding>
+            <element signature="e#284#444#0" />
+            <element signature="e#284#748#0" />
+            <element signature="e#749#905#0" />
+            <element signature="e#1195#1363#0" />
+            <element signature="e#1195#1669#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/repo.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_tests/test02.dsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_tests/test01.dsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_tests/data2.csv">
+      <provider editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state>
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_test2/data/repo.csv">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_test2/test02.dsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_test2/test01.dsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" selection-end-line="15" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client_context.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="135" column="21" selection-start-line="135" selection-start-column="21" selection-end-line="135" selection-end-column="21" />
+        <state relative-caret-position="558">
+          <caret line="150" selection-start-line="150" selection-end-line="150" />
           <folding>
             <element signature="e#126#409#0" />
             <element signature="e#453#601#0" />
@@ -992,43 +890,143 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/project_test2/data3.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="csv-text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_tests/test04.dsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/include/mydb_manager.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="227" column="20" lean-forward="true" selection-start-line="227" selection-start-column="20" selection-end-line="227" selection-end-column="20" />
+        <state relative-caret-position="3577">
+          <caret line="359" column="36" selection-start-line="359" selection-start-column="36" selection-end-line="359" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_test2/test03.dsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_tests/test05.dsl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_tests/test05.exp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_tests/test06.dsl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_tests/test07.dsl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_tests/test08.dsl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_tests/test09.dsl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_tests/test10.dsl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
           <folding>
-            <element signature="e#512#767#0" />
-            <element signature="e#777#823#0" />
-            <element signature="e#844#1089#0" />
-            <element signature="e#1099#1720#0" />
-            <element signature="e#1731#1858#0" />
-            <element signature="e#1868#2233#0" />
-            <element signature="e#2244#2373#0" />
+            <element signature="e#279#679#0" />
+            <element signature="e#680#699#0" expanded="true" />
+            <element signature="e#1801#2061#0" />
+            <element signature="e#1801#5012#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mydb_manager.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="296" selection-start-line="296" selection-end-line="306" />
+          <folding>
+            <element signature="e#0#2#0" />
+            <element signature="e#279#517#0" />
+            <element signature="e#521#1168#0" />
+            <element signature="e#1071#1725#0" />
+            <element signature="e#1728#2221#0" />
+            <element signature="e#2223#2291#0" />
+            <element signature="e#2293#2327#0" />
+            <element signature="e#2379#2568#1" />
+            <element signature="e#2520#2553#0" />
+            <element signature="e#2605#2917#1" />
+            <element signature="e#2868#2897#0" />
+            <element signature="e#2949#3249#1" />
+            <element signature="e#3206#3977#0" />
+            <element signature="e#3999#4072#0" />
+            <element signature="e#4119#4407#1" />
+            <element signature="e#4364#4428#0" />
+            <element signature="e#4475#4726#1" />
+            <element signature="e#4682#4747#0" />
+            <element signature="e#4795#5049#1" />
+            <element signature="e#5005#5057#0" />
+            <element signature="e#5104#5354#1" />
+            <element signature="e#5310#5404#0" />
+            <element signature="e#5451#6444#1" />
+            <element signature="e#6399#6473#0" />
+            <element signature="e#6521#7068#1" />
+            <element signature="e#7024#7297#0" />
+            <element signature="e#7301#7348#0" />
+            <element signature="e#7395#8081#1" />
+            <element signature="e#8163#8173#0" />
+            <element signature="e#8231#8363#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="58" column="65" selection-start-line="58" selection-start-column="65" selection-end-line="58" selection-end-column="65" />
+        <state relative-caret-position="405">
+          <caret line="62" column="31" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
           <folding>
             <element signature="e#0#582#0" />
-            <element signature="e#606#624#0" expanded="true" />
+            <element signature="e#922#1552#0" />
+            <element signature="e#2264#2447#0" />
+            <element signature="e#2264#4760#0" />
+            <element signature="e#4762#4929#0" />
+            <element signature="e#4762#5953#0" />
+            <element signature="e#5354#5571#0" />
+            <element signature="e#5955#7010#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/parse.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="496" column="28" selection-start-line="496" selection-start-column="28" selection-end-line="496" selection-end-column="28" />
+        <state relative-caret-position="647">
+          <caret line="811" selection-start-line="811" selection-start-column="2" selection-end-line="815" selection-end-column="11" />
           <folding>
             <element signature="e#0#315#0" />
             <element signature="e#923#927#0" />
             <element signature="e#1863#1915#0" />
             <element signature="e#1863#2097#0" />
             <element signature="e#2099#2346#0" />
+            <element signature="e#2099#2536#0" />
             <element signature="e#2537#2580#0" />
             <element signature="e#2537#3019#0" />
             <element signature="e#3020#3064#0" />
@@ -1038,21 +1036,22 @@
             <element signature="e#3841#4007#0" />
             <element signature="e#3841#6152#0" />
             <element signature="e#6154#6207#0" />
-            <element signature="e#6154#6875#0" />
-            <element signature="e#6877#6903#0" />
-            <element signature="e#6877#7992#0" />
-            <element signature="e#9533#11056#0" />
-            <element signature="e#11058#11230#0" />
-            <element signature="e#11058#12179#0" />
-            <element signature="e#12182#12300#0" />
-            <element signature="e#12182#13733#0" />
-            <element signature="e#13735#13881#0" />
-            <element signature="e#18390#20459#0" />
-            <element signature="e#20462#21866#0" />
-            <element signature="e#21867#21904#0" />
-            <element signature="e#21867#23330#0" />
-            <element signature="e#23334#23771#0" />
-            <element signature="e#23334#26468#0" />
+            <element signature="e#6154#6876#0" />
+            <element signature="e#6878#6904#0" />
+            <element signature="e#6878#7995#0" />
+            <element signature="e#8085#9521#0" />
+            <element signature="e#9524#11047#0" />
+            <element signature="e#11049#11221#0" />
+            <element signature="e#11049#12170#0" />
+            <element signature="e#12173#12291#0" />
+            <element signature="e#12173#13752#0" />
+            <element signature="e#13726#13872#0" />
+            <element signature="e#13904#16048#1" />
+            <element signature="e#16021#18299#0" />
+            <element signature="e#18301#20504#0" />
+            <element signature="e#21516#21553#0" />
+            <element signature="e#21571#22996#1" />
+            <element signature="e#22970#23407#0" />
           </folding>
         </state>
       </provider>

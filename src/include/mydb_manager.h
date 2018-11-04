@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define DB_FILE "/Users/Shaun/CLionProjects/final_project/src/data/repo.csv"  //persistant store
+#define DB_FILE "/Users/Shaun/CLionProjects/final_project/project_test2/data/repo.csv"  //persistant store
 #define MAX_NUM_TABLE 5
 
 #define MAX_COL_NUM 10
@@ -20,6 +20,8 @@
 // Limits the size of a name in our database to 64 characters
 #define MAX_SIZE_NAME 64
 #define HANDLE_MAX_SIZE 64
+
+#define MAX_NUM_POOL_VAR 20
 
 #define DB_NAME "db1"
 
@@ -44,7 +46,7 @@ typedef enum DataType {
 
 typedef struct Column {
     char name[MAX_SIZE_NAME];
-    int data[INIT_COL_SIZE];
+    int* data;
     // You will implement column indexes later.
     void* index;
     int col_size; //number of ints in the column
@@ -69,7 +71,7 @@ typedef struct Column {
 
 typedef struct Table {
     char name[MAX_SIZE_NAME];
-    Column *columns[MAX_COL_NUM];
+    Column *columns;
     size_t col_count;
     size_t table_length;
 } Table;
@@ -87,7 +89,7 @@ typedef struct Table {
 
 typedef struct Db {
     char name[MAX_SIZE_NAME];
-    Table *tables[MAX_NUM_TABLE];
+    Table *tables;
     size_t tables_size;
     size_t tables_capacity;
 } Db;
@@ -128,7 +130,8 @@ typedef enum ComparatorType {
 typedef struct Result {
     size_t num_tuples;
     DataType data_type;
-    void *payload;
+    //void *payload;
+    int* payload;
 } Result;
 
 /*
@@ -136,7 +139,7 @@ typedef struct Result {
  */
 
 typedef  struct PooledVar {
-    char* name;
+    char name[MAX_SIZE_NAME];
     Result* result;
 } PooledVar;
 
@@ -198,6 +201,7 @@ typedef enum OperatorType {
     SELECT,
     FETCH,
     PRINT,
+    AVG,
     LOAD,
     SHUTDOWN,
 } OperatorType;
@@ -225,7 +229,7 @@ typedef struct SelectOperator {
     Table* table;
     char* low;
     char* high;
-    Char* pooledVar;
+    char* pooledVar;
 } SelectOperator;
 
 /*
@@ -235,14 +239,21 @@ typedef struct FetchOperator {
     Column* col;
     Table* table;
     int* pos;
-    PooledVar* pooledVar;
+    int num_tuples;
+    char* pooledVar;
 } FetchOperator;
 
 typedef struct PrintOperator {
     size_t num_tuples;
     DataType data_type;
-    void* payload;
+    int* payload;
 } PrintOperator;
+
+typedef struct AvgOperator {
+    size_t num_tuples;
+    DataType data_type;
+    int* payload;
+} AvgOperator;
 
 /*
  * DbOperator holds the following fields:
@@ -258,6 +269,7 @@ typedef union OperatorFields {
     SelectOperator select_operator;
     FetchOperator fetch_operator;
     PrintOperator print_operator;
+    AvgOperator avg_operator;
 } OperatorFields;
 
 typedef struct DbOperator {
@@ -321,6 +333,7 @@ Result* select_val(DbOperator* query);
 
 Result* fetch(DbOperator* query);
 
+
 Result* fetch_poolvar(char* name);
 
 /*
@@ -341,5 +354,9 @@ void relational_insert(DbOperator* query);
 void delete_columns(Table *table);
 
 void* store_var(char* var_name, Result* result);
+
+char* print_result(DbOperator* query);
+
+float average_col(DbOperator query);
 
 #endif //FINAL_PROJECT_MYDB_MANAGER_H

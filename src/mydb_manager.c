@@ -20,14 +20,14 @@ Db *current_db;
 
 
 
-VarPool *varpool;
+VarPool *varPool;
 
 
 
 Status create_pool(){
-    varpool = malloc(sizeof(VarPool));
-    varpool->pooledVar= (malloc(1024));
-    varpool->pool_size = 0;
+    varPool = malloc(sizeof(VarPool));
+    varPool->pooledVar = malloc(sizeof(PooledVar)*MAX_NUM_POOL_VAR);
+    varPool->pool_size = 0;
     struct Status ret_status;
     ret_status.code = OK;
     return ret_status;
@@ -36,24 +36,32 @@ Status create_pool(){
 
 
 Status create_db(char *db_name) {
-    current_db = malloc(sizeof(Db));  //allocate memory for DB
-    strcpy(current_db->name,db_name);   //name of the DB
-    current_db->tables_size = 0; //size of the array holding the tables
-    current_db->tables_capacity= 5;  //amount of pointers that can be held in the currently allocated mem slot
-    cs165_log(stdout, "%s - has been created\n", current_db->name);
     struct Status ret_status;
-    ret_status.code = OK;
+    if(current_db != NULL){
+        printf("DB already exist");
+        ret_status.code = OK;
+    } else {
+        current_db = malloc(sizeof(Db));  //allocate memory for DB
+        strcpy(current_db->name, db_name);   //name of the DB
+        current_db->tables_size = 0; //size of the array holding the tables
+        current_db->tables = calloc(sizeof(Table), MAX_NUM_TABLE);
+        current_db->tables_capacity = 5;  //amount of pointers that can be held in the currently allocated mem slot
+        cs165_log(stdout, "%s - has been created\n", current_db->name);
+        ret_status.code = OK;
+    }
     return ret_status;
+
 }
 
 Status* create_table(char* table_name, Db *db,  int num_col, Status *ret_status) {
     Table *tb = malloc(sizeof(Table));
     strcpy(tb->name,table_name);
+    tb->columns = calloc(sizeof(Column), INIT_COL_SIZE);
     tb->col_count = 0;        //initialize column count for created columns
     tb->table_length = num_col;     // max size of table in columns
-    db->tables[db->tables_size] = tb;   //set table array to point at the current table
-    db->tables_size += 1;   //increase table size by 1
     tb->table_length=0;   //number of rows in table
+    db->tables[db->tables_size] = *tb;   //set table array to point at the current table
+    db->tables_size += 1;   //increase table size by 1
     ret_status->code=OK;
     printf("%s table has been created\n", tb->name);
     return ret_status;
@@ -62,12 +70,13 @@ Status* create_table(char* table_name, Db *db,  int num_col, Status *ret_status)
 
 Status* create_col(char* col_name, Table* tb, Status *ret_status){
     Column *col = malloc(sizeof(Column));  //allocate mem for new column
-    tb->columns[tb->col_count] = col;   //set column array to point at the current column
-    tb->col_count += 1;   //advance the pointer by 1
     col->col_size=0;
+    col->data = calloc(sizeof(int), INIT_COL_SIZE);
     strcpy(col->name,col_name);
     printf("%s column has been created\n", col->name);
     ret_status->code=OK;
+    tb->columns[tb->col_count] = *col;   //set column array to point at the current column
+    tb->col_count += 1;   //advance the pointer by 1
     return ret_status;
 }
 
@@ -93,7 +102,7 @@ void insert_col(Column *col, int num){
 Column* fetch_column(Table *tb, char* col_name){
     Column *current_column;
     for(int i=0; i < tb->col_count; ++i) {
-        current_column = tb->columns[i];
+        current_column = &tb->columns[i];
         if (strcmp(current_column->name, col_name) == 0)
             return (current_column);
     }
@@ -107,11 +116,11 @@ Column* fetch_column(Table *tb, char* col_name){
 Table* fetch_table(char* table_name){
     Table *current_tb;
     for(int i=0; i < current_db->tables_size; ++i){
-        current_tb = current_db->tables[i];
+        current_tb = &current_db->tables[i];
         if (strcmp(current_tb->name, table_name) == 0)
             return(current_tb);
-        printf("Table Not Found\n");
     }
+    printf("Table Not Found\n");
     return(0);
 }
 
@@ -124,7 +133,7 @@ void relational_insert(DbOperator* query) {
     working_table->table_length+= 1;  //add length to table
     for(int i=0; i < query->operator_fields.insert_operator.num_values; ++i)
     {
-        char* column_name = working_table->columns[i]->name;
+        char* column_name = working_table->columns[i].name;
         Column *working_col = fetch_column(working_table, column_name); //fetch working col
         insert_col(working_col, values[i]);
 
@@ -138,15 +147,15 @@ void relational_insert(DbOperator* query) {
 /*
  * Return a positions array of col given a column and low and high
  */
-int* select_high_low(Column* col,int low,int high){
-    int* temp_pos=malloc(sizeof(int)*INIT_COL_SIZE);
+void* select_high_low(Result* result,Column* col,int low,int high){
     int j=0;
     for (int i=0; i < col->col_size; ++i){
-        if (col->data[i] > low && col->data[i] < high)
-            temp_pos[j] = i;
+        if (col->data[i] < high && col->data[i] > low) {
+            result->payload[j] = i;
+            result->num_tuples +=1;
             ++j;
+        }
     }
-    return(temp_pos);
 
 }
 
@@ -154,31 +163,32 @@ int* select_high_low(Column* col,int low,int high){
 /*
  * Return a positions array of col given a column and low
  */
-int* select_low(Column* col,int low){
-    int* temp_pos=malloc(sizeof(int)*INIT_COL_SIZE);
+void* select_low(Result* result,Column* col,int low){
     int j=0;
     for (int i=0; i < col->col_size; ++i){
-        if (col->data[i] > low)
-            temp_pos[j] = i;
-        ++j;
+        if (col->data[i] > low) {
+            result->payload[j] = i;
+            result->num_tuples +=1;
+            ++j;
+        }
     }
-    return(temp_pos);
+
 }
 
 /*
  * Return a positions array of col given a column and high
  */
 
-int* select_high(Column* col,int high){
-    int* temp_pos=malloc(sizeof(int)*INIT_COL_SIZE);
+void* select_high(Result* result,Column* col,int high){
     int j=0;
     for (int i=0; i < col->col_size; ++i){
         if (col->data[i] < high) {
-            temp_pos[j] = i;
+            result->payload[j] = i;
+            result->num_tuples +=1;
             ++j;
         }
     }
-    return(temp_pos);
+
 }
 
 /*
@@ -187,9 +197,9 @@ int* select_high(Column* col,int high){
 void* store_var(char* var_name, Result* result){
     PooledVar* var= malloc(sizeof(PooledVar));
     var->result = result;
-    var->name = var_name;
-    varpool->pooledVar[varpool->pool_size] = *var;
-    varpool->pool_size += 1;
+    strcpy(var->name,var_name);
+    varPool->pooledVar[varPool->pool_size] = *var;
+    varPool->pool_size += 1;
 }
 
 /*
@@ -201,25 +211,25 @@ Result* select_val(DbOperator* query) {
     Column* col = query->operator_fields.select_operator.col;
     int* temp_pos;
     //initialize result vector
-    Result* result = malloc(sizeof(int)*INIT_COL_SIZE);
+    Result* result = malloc(sizeof(result));
     result->num_tuples = 0;
     result->data_type =  INT;
+    result->payload = calloc(sizeof(int),INIT_COL_SIZE);
 
     //temporary position array
     if (strcmp(low_c,"null")==0){
         int high = atoi(query->operator_fields.select_operator.high);
-        result->payload=select_high(col,high);
+        select_high(result,col,high);
     }
     else if (strcmp(high_c,"null")==0){
         int low = atoi(query->operator_fields.select_operator.low);
-        result->payload=select_low(col,low);
+        select_low(result,col,low);
     }
     else {
         int high = atoi(query->operator_fields.select_operator.high);
         int low = atoi(query->operator_fields.select_operator.low);
-        result->payload=select_high_low(col, low, high);
+        select_high_low(result, col, low, high);
     }
-    result->num_tuples  = sizeof(result->payload);
     return(result);
 }
 /*
@@ -228,51 +238,79 @@ Result* select_val(DbOperator* query) {
 
 Result* fetch(DbOperator* query) {
     Result* result = malloc(sizeof(Result));
-    Column* temp_payload = malloc(sizeof(int)*INIT_COL_SIZE);
     result->num_tuples = 0;
     result->data_type =  INT;
+
     Column* col = query->operator_fields.fetch_operator.col;
     int* pos = query->operator_fields.fetch_operator.pos;
-    for (int i=0; i < sizeof(pos); ++i){
-       temp_payload[i] = col[pos[i]];
+    int size = query->operator_fields.fetch_operator.num_tuples;
+    result->payload = calloc(sizeof(int),size);
+    for (int i=0; i < size; ++i){
+       result->payload[i] = col->data[pos[i]];
        //increase number of tuples
        result->num_tuples += 1;
     }
-    result->payload = temp_payload;
     return(result);
 
 }
 
 Result* fetch_poolvar(char* name){
-    for (int i; i < varpool->pool_size;++i){
-        if(strcmp(name, varpool->pooledVar[i].name))
-          return(varpool->pooledVar[i].result);
+    for (int i = 0; i < varPool->pool_size;++i){
+        if(strcmp(name, varPool->pooledVar[i].name)==0)
+          return(varPool->pooledVar[i].result);
     }
     log_err("Error: no pooled variable exist with that name");
     return(0);
 }
 
-
 /*
  * Given a result print result to screen
  */
-void* print_result(DbOperator* query) {
+char* print_result(DbOperator* query) {
+
     int num_tuples = query->operator_fields.print_operator.num_tuples;
+    char* result_string = malloc(num_tuples*10* sizeof(char));
     DataType data_type = query->operator_fields.print_operator.data_type;
+    int result_size = 0;
     if (data_type == INT) {
         int *payload = query->operator_fields.print_operator.payload;
+        int j =0;
         for (int i = 0; i < num_tuples; ++i) {
-            printf("%d", payload[i]);
+
+            //convert result to char*
+            char* c = malloc(sizeof(char)*10);
+
+            snprintf(c, sizeof(int), "%d, ", payload[i]);
+            result_string = concat(result_string, c);
+
+
         }
+        return(result_string);
     }
 }
+
+
+/*
+ * Given a column return the average
+ */
+
+//float average_col(DbOperator query){
+//    int num_tuples = query.operator_fields.avg_operator.num_tuples;
+//    int total = 0;
+//    int* col = query.operator_fields.avg_operator.payload;
+//    for (int i =0; i < num_tuples; ++i){
+//        total += col[i];
+//    }
+//    float average = total/num_tuples;
+//    return (average);
+//}
 
 
 
 
 void delete_columns(Table *table) {
     for (int i = 0; i < table->col_count; i++) {
-        delete_col(table->columns[i]);
+        delete_col(&table->columns[i]);
     }
 }
 

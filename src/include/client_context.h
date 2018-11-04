@@ -18,6 +18,8 @@ char* strip_url(char* arguments);
 
 char* strip_par(char* arguments);
 
+char* concat(const char *s1, const char *s2);
+
 char* strip_var(char* tokenizer);
 
 #endif

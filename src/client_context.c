@@ -136,6 +136,23 @@ char* strip_par(char* arguments){
     return(stripped);
 }
 
+
+/*
+ * given two char* concat
+ *
+ */
+
+char* concat(const char *s1, const char *s2)
+{
+    char *result = malloc(strlen(s1) + strlen(s2) + 1); // +1 for the null-terminator
+    // in real code you would check for errors in malloc here
+    strcpy(result, s1);
+    strcat(result, s2);
+    return result;
+}
+
+
+
 /**
 *  Getting started hint:
 * 		What other entities are context related (and contextual with respect to what scope in your design)?

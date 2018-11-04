@@ -23,7 +23,7 @@
 
 
 extern Db *current_db;
-extern VarPool *varpool;
+extern VarPool *varPool;
 
 extern message_status parse_create_tbl(char* create_arguments);
 
@@ -207,7 +207,7 @@ void build_top_row(char* db_name,Table *tb,FILE *fp){
     Column *working_column = malloc(sizeof(Column));
     //iterate through column names
     for(int i= 0; i < working_table->col_count; ++i) {
-        working_column = working_table->columns[i];
+        working_column = &working_table->columns[i];
         char* column_name = working_column->name;
         if (i < (working_table->col_count-1)) {
             fprintf(fp, "%s.%s.%s,", db_name, table_name, column_name);
@@ -234,14 +234,14 @@ message_status save_db(){
     //iterate through tables and save tables
     //iterate through tables and save tables
     for(int i=0; i < current_db->tables_size; ++i) {
-        working_table = current_db->tables[i];
+        working_table = &current_db->tables[i];
         //print top row
         build_top_row(db_name,working_table, fp);
         //iterate through row
         for(int j=0; j < working_table->table_length; ++j){
             //save row
             for(int i= 0; i < working_table->col_count; ++i) {
-                working_column = working_table->columns[i];
+                working_column = &working_table->columns[i];
                 fprintf(fp, "%d,", working_column->data[j]);
             }
             fprintf(fp,"\n");
@@ -456,9 +456,6 @@ DbOperator* parse_insert(char* query_command, message* send_message) {
         //  strip out table name only
         char* table_name = strip_table(db_table_name);
 
-        //  strip out db name only
-
-        char* db_name = strip_db(db_table_name);
 
         // lookup the table and make sure it exists. 
         Table* insert_table = fetch_table(table_name);
@@ -562,13 +559,9 @@ DbOperator* parse_fetch(char* var_name, char* query_command, message* send_messa
 
     //create pooled var entry
     PooledVar *pooledVar = malloc(sizeof(PooledVar));
-    pooledVar->name = var_name;
+    strcpy(pooledVar->name,var_name);
 
     char *token = NULL;
-    // check for insert statement if so strip
-    if (strncmp(query_command, "f", 1) == 0) {
-        query_command = strip_command(query_command);
-    }
     // check for leading '('
     if (strncmp(query_command, "(", 1) == 0) {
         query_command++;
@@ -578,7 +571,8 @@ DbOperator* parse_fetch(char* var_name, char* query_command, message* send_messa
         if (send_message->status == INCORRECT_FORMAT) {
             return NULL;
         }
-        //
+
+
 
         //  strip out table name only
         char *table_name = strip_table(db_table_name);
@@ -599,23 +593,28 @@ DbOperator* parse_fetch(char* var_name, char* query_command, message* send_messa
         // strip out position vector
         char* token = next_token(command_index, &send_message->status);
 
-        int pos = atoi(token);
+        // strip out pool var name and retrieve result
+        char* temp_result= strip_par(token);
+
+        //rettrieved position array
+        Result* result  = fetch_poolvar(temp_result);
 
 
 
         //checks to make sure we have position vector
-        if (pos == NULL) {
+        if (result == NULL) {
             send_message->status = INCORRECT_FORMAT;
             return NULL;
         }
         // make select operator.
         DbOperator *dbo = malloc(sizeof(DbOperator));
         dbo->type = FETCH;
-        dbo->operator_fields.fetch_operator.pooledVar = pooledVar;
-        dbo->operator_fields.fetch_operator.table = table_name;
-        dbo->operator_fields.fetch_operator.col = fetch_col;
+        dbo->operator_fields.fetch_operator.pooledVar = var_name;
+        dbo->operator_fields.fetch_operator.table = fetch_table(table_name);
+        dbo->operator_fields.fetch_operator.col = fetch_column(fetch_table(table_name),fetch_col);
         //creates a position vector
-        dbo->operator_fields.fetch_operator.pos = pos;
+        dbo->operator_fields.fetch_operator.pos = result->payload;
+        dbo->operator_fields.fetch_operator.num_tuples = result->num_tuples;
         return dbo;
     } else {
         send_message->status = UNKNOWN_COMMAND;
@@ -623,26 +622,55 @@ DbOperator* parse_fetch(char* var_name, char* query_command, message* send_messa
     }
 }
 
+//DbOperator* parse_avg(char* var_name, char* query_command, message* send_message) {
+//
+//    //create pooled var entry
+//    PooledVar *pooledVar = malloc(sizeof(PooledVar));
+//    strcpy(pooledVar->name,var_name);
+//
+//    char *token = NULL;
+//    // check for leading '('
+//    if (strncmp(query_command, "(", 1) == 0) {
+//
+//        query_command++;
+//
+//        // strip out pool var name and retrieve result
+//        char* var_name= strip_par(query_command);
+//
+//        // strip out pool var name and retrieve result
+//        char* temp_result= strip_par(token);
+//
+//        //rettrieved position array
+//        Result* result  = fetch_poolvar(temp_result);
+//
+//
+//
+//
+//        // make select operator.
+//        DbOperator *dbo = malloc(sizeof(DbOperator));
+//        dbo->type = AVG;
+//        dbo->operator_fields.avg_operator.num_tuples = result->num_tuples;
+//        dbo->operator_fields.avg_operator.payload = result->payload;
+//        dbo->operator_fields.avg_operator.data_type = result->data_type;
+//
+//        return dbo;
+//    } else {
+//        send_message->status = UNKNOWN_COMMAND;
+//        return NULL;
+//    }
+//}
 
 DbOperator* parse_print(char* query_command, message* send_message) {
     char *token = NULL;
     // check for insert statement if so strip
-    if (strncmp(query_command, "p", 1) == 0) {
-        query_command = strip_command(query_command);
-    }
-    // check for leading '('
+
     if (strncmp(query_command, "(", 1) == 0) {
         query_command++;
-        char **command_index = &query_command;
-        // parse table input
-        char *db_table_name = next_token(command_index, &send_message->status);
-        if (send_message->status == INCORRECT_FORMAT) {
-            return NULL;
-        }
-        //
+
 
         // strip out pool var name and retrieve result
-        char* var_name= next_token(command_index, &send_message->status);
+        char* var_name= strip_par(query_command);
+
         Result* result  = fetch_poolvar(var_name);
 
 
@@ -656,9 +684,11 @@ DbOperator* parse_print(char* query_command, message* send_message) {
         dbo->type = PRINT;
         dbo->operator_fields.print_operator.num_tuples = result->num_tuples;
         dbo->operator_fields.print_operator.payload = result->payload;
-        dbo->operator_fields.print_operator.data_type= result->data_type;
+        dbo->operator_fields.print_operator.data_type = result->data_type;
         return dbo;
-    } else {
+    }
+
+    else {
         send_message->status = UNKNOWN_COMMAND;
         return NULL;
     }
@@ -766,7 +796,9 @@ DbOperator* parse_command(char* query_command, message* send_message, int client
     }
       //here we strip off temporary storage variable name  for select and fetch queries
       else {
-        create_pool();  //create the variable pool
+        if (varPool == NULL){
+            create_pool();
+        }
         //trim new variable plus = sign
         if (strncmp(query_command, "select", 6) == 0){
             query_command += 6;
@@ -777,6 +809,11 @@ DbOperator* parse_command(char* query_command, message* send_message, int client
             dbo = parse_fetch(handle, query_command, send_message);
 
         }
+//        else if(strncmp(query_command, "avg", 3) == 0){
+//            query_command += 3;
+//            dbo = parse_avg(handle, query_command, send_message);
+//
+//        }
     }
 
     if (dbo == NULL) {

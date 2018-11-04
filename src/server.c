@@ -58,9 +58,14 @@ char* execute_DbOperator(DbOperator* query) {
         Result* result = fetch(query);
         store_var(query->operator_fields.fetch_operator.pooledVar,result);
     }
-
-    else if (query->type == FETCH) {
-        print_result(query);
+//    else if (query->type == AVG) {
+//        Result* result = average_col(query);
+//        store_var(query->operator_fields.fetch_operator.pooledVar,result);
+//    }
+    else if (query->type == PRINT) {
+        char* results = print_result(query);
+        printf("%s\n", results);
+        return (results);
     }
 
     free(query);
