@@ -22,4 +22,6 @@ char* concat(const char *s1, const char *s2);
 
 char* strip_var(char* tokenizer);
 
+int* cont_per(char* str);
+
 #endif

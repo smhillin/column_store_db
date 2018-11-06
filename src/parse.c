@@ -577,10 +577,6 @@ DbOperator* parse_fetch(char* var_name, char* query_command, message* send_messa
         //  strip out table name only
         char *table_name = strip_table(db_table_name);
 
-        //  strip out db name only
-
-        char *db_name = strip_db(db_table_name);
-
         //strip out column name
         char *fetch_col = strip_col(db_table_name);
 
@@ -613,7 +609,7 @@ DbOperator* parse_fetch(char* var_name, char* query_command, message* send_messa
         dbo->operator_fields.fetch_operator.table = fetch_table(table_name);
         dbo->operator_fields.fetch_operator.col = fetch_column(fetch_table(table_name),fetch_col);
         //creates a position vector
-        dbo->operator_fields.fetch_operator.pos = result->payload;
+        dbo->operator_fields.fetch_operator.pos = (int*)(result->payload);
         dbo->operator_fields.fetch_operator.num_tuples = result->num_tuples;
         return dbo;
     } else {
@@ -622,43 +618,479 @@ DbOperator* parse_fetch(char* var_name, char* query_command, message* send_messa
     }
 }
 
-//DbOperator* parse_avg(char* var_name, char* query_command, message* send_message) {
-//
-//    //create pooled var entry
-//    PooledVar *pooledVar = malloc(sizeof(PooledVar));
-//    strcpy(pooledVar->name,var_name);
-//
-//    char *token = NULL;
-//    // check for leading '('
-//    if (strncmp(query_command, "(", 1) == 0) {
-//
-//        query_command++;
-//
-//        // strip out pool var name and retrieve result
-//        char* var_name= strip_par(query_command);
-//
-//        // strip out pool var name and retrieve result
-//        char* temp_result= strip_par(token);
-//
-//        //rettrieved position array
-//        Result* result  = fetch_poolvar(temp_result);
-//
-//
-//
-//
-//        // make select operator.
-//        DbOperator *dbo = malloc(sizeof(DbOperator));
-//        dbo->type = AVG;
-//        dbo->operator_fields.avg_operator.num_tuples = result->num_tuples;
-//        dbo->operator_fields.avg_operator.payload = result->payload;
-//        dbo->operator_fields.avg_operator.data_type = result->data_type;
-//
-//        return dbo;
-//    } else {
-//        send_message->status = UNKNOWN_COMMAND;
-//        return NULL;
-//    }
-//}
+DbOperator* parse_avg(char* var_name, char* query_command, message* send_message) {
+
+    //create pooled var entry
+    PooledVar *pooledVar = malloc(sizeof(PooledVar));
+    strcpy(pooledVar->name,var_name);
+    Result* result = malloc(sizeof(Result));
+
+    char *token = NULL;
+    // check for leading '('
+    if (strncmp(query_command, "(", 1) == 0) {
+
+        query_command++;
+
+        // strip out pool var name and retrieve result
+        char* temp_name= strip_par(query_command);
+
+
+        //check to see if we need to retrieve a column or projection
+        if (cont_per(temp_name) == 0)  {
+
+            //  strip out table name only
+            char *table_name = strip_table(temp_name);
+
+            //strip out column name
+            char *fetch_col = strip_col(temp_name);
+
+            // lookup the table and make sure it exists.
+            Table *insert_table = fetch_table(table_name);
+
+            Column* col = fetch_column(fetch_table(table_name),fetch_col);
+
+
+
+            result->payload = col->data;
+
+            result->data_type = INT;
+
+            result->num_tuples = col->col_size;
+
+            if (insert_table == NULL) {
+                send_message->status = OBJECT_NOT_FOUND;
+                return NULL;
+            }
+
+        }
+
+        else {
+            //retrieve temporary projection
+
+            result  = fetch_poolvar(temp_name);
+        }
+
+
+
+
+
+
+        // make select operator.
+        DbOperator *dbo = malloc(sizeof(DbOperator));
+        dbo->type = AVG;
+        dbo->operator_fields.avg_operator.num_tuples = result->num_tuples;
+        dbo->operator_fields.avg_operator.payload = result->payload;
+        dbo->operator_fields.avg_operator.data_type = result->data_type;
+        dbo->operator_fields.avg_operator.pooledVar = var_name;
+
+        return dbo;
+    } else {
+        send_message->status = UNKNOWN_COMMAND;
+        return NULL;
+    }
+}
+
+DbOperator* parse_sum(char* var_name, char* query_command, message* send_message) {
+
+    //create pooled var entry
+    PooledVar *pooledVar = malloc(sizeof(PooledVar));
+    strcpy(pooledVar->name,var_name);
+    Result* result = malloc(sizeof(Result));
+
+    char *token = NULL;
+    // check for leading '('
+    if (strncmp(query_command, "(", 1) == 0) {
+
+        query_command++;
+
+        // strip out pool var name and retrieve result
+        char* temp_name= strip_par(query_command);
+
+
+        //check to see if we need to retrieve a column or projection
+        if (cont_per(temp_name) == 0)  {
+
+            //  strip out table name only
+            char *table_name = strip_table(temp_name);
+
+            //strip out column name
+            char *fetch_col = strip_col(temp_name);
+
+            // lookup the table and make sure it exists.
+            Table *insert_table = fetch_table(table_name);
+
+            Column* col = fetch_column(fetch_table(table_name),fetch_col);
+
+
+
+            result->payload = col->data;
+
+            result->data_type = INT;
+
+            result->num_tuples = col->col_size;
+
+            if (insert_table == NULL) {
+                send_message->status = OBJECT_NOT_FOUND;
+                return NULL;
+            }
+
+        }
+
+        else {
+            //retrieve temporary projection
+
+            result  = fetch_poolvar(temp_name);
+        }
+
+
+
+
+
+
+        // make select operator.
+        DbOperator *dbo = malloc(sizeof(DbOperator));
+        dbo->type = SUM;
+        dbo->operator_fields.sum_operator.num_tuples = result->num_tuples;
+        dbo->operator_fields.sum_operator.payload = result->payload;
+        dbo->operator_fields.sum_operator.data_type = result->data_type;
+        dbo->operator_fields.sum_operator.pooledVar = var_name;
+
+        return dbo;
+    } else {
+        send_message->status = UNKNOWN_COMMAND;
+        return NULL;
+    }
+}
+
+
+DbOperator* parse_add(char* var_name, char* query_command, message* send_message) {
+
+    //create pooled var entry
+    PooledVar *pooledVar = malloc(sizeof(PooledVar));
+    strcpy(pooledVar->name,var_name);
+    Result* result1 = malloc(sizeof(Result));
+
+    Result* result2 = malloc(sizeof(Result));
+
+    char *token = NULL;
+    // check for leading '('
+    if (strncmp(query_command, "(", 1) == 0) {
+
+        query_command++;
+
+
+
+
+        // strip out 2nd column name
+
+        char** command_index = &query_command;
+
+        // parse table input
+        char* temp_name1 = next_token(command_index, &send_message->status);
+
+        char* temp_name2 = next_token(command_index, &send_message->status);
+
+        temp_name2 = strip_par(temp_name2);
+
+        if (send_message->status == INCORRECT_FORMAT) {
+            return NULL;
+        }
+
+
+        //check to see if we need to retrieve a column or projection
+        if (cont_per(temp_name1) == 0)  {
+
+            //  strip out table name only
+            char *table_name = strip_table(temp_name1);
+
+            //strip out column name
+            char *fetch_col = strip_col(temp_name1);
+
+            // lookup the table and make sure it exists.
+            Table *insert_table = fetch_table(table_name);
+
+            Column* col = fetch_column(fetch_table(table_name),fetch_col);
+
+
+
+            result1->payload = col->data;
+
+            result1->data_type = INT;
+
+            result1->num_tuples = col->col_size;
+
+            if (insert_table == NULL) {
+                send_message->status = OBJECT_NOT_FOUND;
+                return NULL;
+            }
+
+        }
+
+        else {
+            //retrieve temporary projection
+
+            result1  = fetch_poolvar(temp_name1);
+
+            result2  = fetch_poolvar(temp_name2);
+
+        }
+
+
+
+
+
+
+        // make select operator.
+        DbOperator *dbo = malloc(sizeof(DbOperator));
+        dbo->type = ADD;
+        dbo->operator_fields.add_operator.num_tuples = result1->num_tuples;
+        dbo->operator_fields.add_operator.payload1 = result1->payload;
+        dbo->operator_fields.add_operator.payload2 = result2->payload;
+        dbo->operator_fields.add_operator.data_type = result1->data_type;
+        dbo->operator_fields.add_operator.pooledVar = var_name;
+        return dbo;
+    } else {
+        send_message->status = UNKNOWN_COMMAND;
+        return NULL;
+    }
+}
+
+
+DbOperator* parse_sub(char* var_name, char* query_command, message* send_message) {
+
+    //create pooled var entry
+    PooledVar *pooledVar = malloc(sizeof(PooledVar));
+    strcpy(pooledVar->name,var_name);
+    Result* result1 = malloc(sizeof(Result));
+
+    Result* result2 = malloc(sizeof(Result));
+
+    char *token = NULL;
+    // check for leading '('
+    if (strncmp(query_command, "(", 1) == 0) {
+
+        query_command++;
+
+
+
+
+        // strip out 2nd column name
+
+        char** command_index = &query_command;
+
+        // parse table input
+        char* temp_name1 = next_token(command_index, &send_message->status);
+
+        char* temp_name2 = next_token(command_index, &send_message->status);
+
+        temp_name2 = strip_par(temp_name2);
+
+        if (send_message->status == INCORRECT_FORMAT) {
+            return NULL;
+        }
+
+
+        //check to see if we need to retrieve a column or projection
+        if (cont_per(temp_name1) == 0)  {
+
+            //  strip out table name only
+            char *table_name = strip_table(temp_name1);
+
+            //strip out column name
+            char *fetch_col = strip_col(temp_name1);
+
+            // lookup the table and make sure it exists.
+            Table *insert_table = fetch_table(table_name);
+
+            Column* col = fetch_column(fetch_table(table_name),fetch_col);
+
+
+
+            result1->payload = col->data;
+
+            result1->data_type = INT;
+
+            result1->num_tuples = col->col_size;
+
+            if (insert_table == NULL) {
+                send_message->status = OBJECT_NOT_FOUND;
+                return NULL;
+            }
+
+        }
+
+        else {
+            //retrieve temporary projection
+
+            result1  = fetch_poolvar(temp_name1);
+
+            result2  = fetch_poolvar(temp_name2);
+
+        }
+
+
+
+
+
+
+        // make select operator.
+        DbOperator *dbo = malloc(sizeof(DbOperator));
+        dbo->type = SUB;
+        dbo->operator_fields.sub_operator.num_tuples = result1->num_tuples;
+        dbo->operator_fields.sub_operator.payload1 = result1->payload;
+        dbo->operator_fields.sub_operator.payload2 = result2->payload;
+        dbo->operator_fields.sub_operator.data_type = result1->data_type;
+        dbo->operator_fields.sub_operator.pooledVar = var_name;
+        return dbo;
+    } else {
+        send_message->status = UNKNOWN_COMMAND;
+        return NULL;
+    }
+}
+
+DbOperator* parse_max(char* var_name, char* query_command, message* send_message) {
+
+    //create pooled var entry
+    PooledVar *pooledVar = malloc(sizeof(PooledVar));
+    strcpy(pooledVar->name,var_name);
+    Result* result = malloc(sizeof(Result));
+
+    char *token = NULL;
+    // check for leading '('
+    if (strncmp(query_command, "(", 1) == 0) {
+
+        query_command++;
+
+        // strip out pool var name and retrieve result
+        char* temp_name= strip_par(query_command);
+
+
+        //check to see if we need to retrieve a column or projection
+        if (cont_per(temp_name) == 0)  {
+
+            //  strip out table name only
+            char *table_name = strip_table(temp_name);
+
+            //strip out column name
+            char *fetch_col = strip_col(temp_name);
+
+            // lookup the table and make sure it exists.
+            Table *insert_table = fetch_table(table_name);
+
+            Column* col = fetch_column(fetch_table(table_name),fetch_col);
+
+
+
+            result->payload = col->data;
+
+            result->data_type = INT;
+
+            result->num_tuples = col->col_size;
+
+            if (insert_table == NULL) {
+                send_message->status = OBJECT_NOT_FOUND;
+                return NULL;
+            }
+
+        }
+
+        else {
+            //retrieve temporary projection
+
+            result  = fetch_poolvar(temp_name);
+        }
+
+
+
+
+
+
+        // make select operator.
+        DbOperator *dbo = malloc(sizeof(DbOperator));
+        dbo->type = MAX;
+        dbo->operator_fields.max_operator.num_tuples = result->num_tuples;
+        dbo->operator_fields.max_operator.payload = result->payload;
+        dbo->operator_fields.max_operator.data_type = result->data_type;
+        dbo->operator_fields.max_operator.pooledVar = var_name;
+
+        return dbo;
+    } else {
+        send_message->status = UNKNOWN_COMMAND;
+        return NULL;
+    }
+}
+
+DbOperator* parse_min(char* var_name, char* query_command, message* send_message) {
+
+    //create pooled var entry
+    PooledVar *pooledVar = malloc(sizeof(PooledVar));
+    strcpy(pooledVar->name,var_name);
+    Result* result = malloc(sizeof(Result));
+
+    char *token = NULL;
+    // check for leading '('
+    if (strncmp(query_command, "(", 1) == 0) {
+
+        query_command++;
+
+        // strip out pool var name and retrieve result
+        char* temp_name= strip_par(query_command);
+
+
+        //check to see if we need to retrieve a column or projection
+        if (cont_per(temp_name) == 0)  {
+
+            //  strip out table name only
+            char *table_name = strip_table(temp_name);
+
+            //strip out column name
+            char *fetch_col = strip_col(temp_name);
+
+            // lookup the table and make sure it exists.
+            Table *insert_table = fetch_table(table_name);
+
+            Column* col = fetch_column(fetch_table(table_name),fetch_col);
+
+
+
+            result->payload = col->data;
+
+            result->data_type = INT;
+
+            result->num_tuples = col->col_size;
+
+            if (insert_table == NULL) {
+                send_message->status = OBJECT_NOT_FOUND;
+                return NULL;
+            }
+
+        }
+
+        else {
+            //retrieve temporary projection
+
+            result  = fetch_poolvar(temp_name);
+        }
+
+
+
+
+
+
+        // make select operator.
+        DbOperator *dbo = malloc(sizeof(DbOperator));
+        dbo->type = MIN;
+        dbo->operator_fields.min_operator.num_tuples = result->num_tuples;
+        dbo->operator_fields.min_operator.payload = result->payload;
+        dbo->operator_fields.min_operator.data_type = result->data_type;
+        dbo->operator_fields.min_operator.pooledVar = var_name;
+
+        return dbo;
+    } else {
+        send_message->status = UNKNOWN_COMMAND;
+        return NULL;
+    }
+}
 
 DbOperator* parse_print(char* query_command, message* send_message) {
     char *token = NULL;
@@ -732,7 +1164,6 @@ message_status parse_load(char* create_arguments) {
     free(to_free);
     return mes_status;
 }
-
 
 
 /**
@@ -809,11 +1240,35 @@ DbOperator* parse_command(char* query_command, message* send_message, int client
             dbo = parse_fetch(handle, query_command, send_message);
 
         }
-//        else if(strncmp(query_command, "avg", 3) == 0){
-//            query_command += 3;
-//            dbo = parse_avg(handle, query_command, send_message);
-//
-//        }
+        else if(strncmp(query_command, "avg", 3) == 0){
+            query_command += 3;
+            dbo = parse_avg(handle, query_command, send_message);
+
+        }
+        else if(strncmp(query_command, "sum", 3) == 0) {
+            query_command += 3;
+            dbo = parse_sum(handle, query_command, send_message);
+        }
+        else if(strncmp(query_command, "add", 3) == 0){
+                query_command += 3;
+                dbo = parse_add(handle, query_command, send_message);
+
+        }
+        else if(strncmp(query_command, "sub", 3) == 0){
+            query_command += 3;
+            dbo = parse_sub(handle, query_command, send_message);
+
+        }
+        else if(strncmp(query_command, "max", 3) == 0){
+            query_command += 3;
+            dbo = parse_max(handle, query_command, send_message);
+
+        }
+        else if(strncmp(query_command, "min", 3) == 0){
+            query_command += 3;
+            dbo = parse_min(handle, query_command, send_message);
+
+        }
     }
 
     if (dbo == NULL) {

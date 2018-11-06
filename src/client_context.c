@@ -152,6 +152,17 @@ char* concat(const char *s1, const char *s2)
 }
 
 
+/*
+ * Returns 0 if a string contains a .
+ */
+int* cont_per(char* str){
+    for(int i=0; i < sizeof(str); ++i){
+        if (str[i] == '.' ){
+            return 0;
+        }
+    }
+    return 1;
+}
 
 /**
 *  Getting started hint:

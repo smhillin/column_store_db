@@ -149,14 +149,16 @@ void relational_insert(DbOperator* query) {
  */
 void* select_high_low(Result* result,Column* col,int low,int high){
     int j=0;
+    int* temp_p = (int*)result->payload;
     for (int i=0; i < col->col_size; ++i){
         if (col->data[i] < high && col->data[i] > low) {
-            result->payload[j] = i;
+            temp_p[j] = i;
             result->num_tuples +=1;
             ++j;
         }
     }
-
+    result->data_type = INT;
+    result->payload = temp_p;
 }
 
 
@@ -165,13 +167,16 @@ void* select_high_low(Result* result,Column* col,int low,int high){
  */
 void* select_low(Result* result,Column* col,int low){
     int j=0;
+    int* temp_p = (int*)result->payload;
     for (int i=0; i < col->col_size; ++i){
         if (col->data[i] > low) {
-            result->payload[j] = i;
+            temp_p[j] = i;
             result->num_tuples +=1;
             ++j;
         }
     }
+    result->data_type = INT;
+    result->payload = temp_p;
 
 }
 
@@ -181,13 +186,16 @@ void* select_low(Result* result,Column* col,int low){
 
 void* select_high(Result* result,Column* col,int high){
     int j=0;
+    int* temp_p = (int*)result->payload;
     for (int i=0; i < col->col_size; ++i){
         if (col->data[i] < high) {
-            result->payload[j] = i;
+            temp_p[j] = i;
             result->num_tuples +=1;
             ++j;
         }
     }
+    result->data_type = INT;
+    result->payload = temp_p;
 
 }
 
@@ -213,9 +221,7 @@ Result* select_val(DbOperator* query) {
     //initialize result vector
     Result* result = malloc(sizeof(result));
     result->num_tuples = 0;
-    result->data_type =  INT;
     result->payload = calloc(sizeof(int),INIT_COL_SIZE);
-
     //temporary position array
     if (strcmp(low_c,"null")==0){
         int high = atoi(query->operator_fields.select_operator.high);
@@ -240,16 +246,17 @@ Result* fetch(DbOperator* query) {
     Result* result = malloc(sizeof(Result));
     result->num_tuples = 0;
     result->data_type =  INT;
-
     Column* col = query->operator_fields.fetch_operator.col;
     int* pos = query->operator_fields.fetch_operator.pos;
     int size = query->operator_fields.fetch_operator.num_tuples;
-    result->payload = calloc(sizeof(int),size);
+    int* temp_p = calloc(sizeof(int), size);
     for (int i=0; i < size; ++i){
-       result->payload[i] = col->data[pos[i]];
+       temp_p[i] = col->data[pos[i]];
        //increase number of tuples
        result->num_tuples += 1;
     }
+    result->data_type = INT;
+    result->payload = temp_p;
     return(result);
 
 }
@@ -277,13 +284,40 @@ char* print_result(DbOperator* query) {
         int j =0;
         for (int i = 0; i < num_tuples; ++i) {
 
+            if (num_tuples > 1) {
+                //convert result to char*
+                char *c = malloc(sizeof(char) * 10);
+                snprintf(c, sizeof(int), "%d, ", payload[i]);
+                result_string = concat(result_string, c);
+            }
+
+            else if (num_tuples ==1 ){
+                char *c = malloc(sizeof(char) * 10);
+                snprintf(c, sizeof(int), "%d ", payload[i]);
+                result_string = c;
+            }
+
+
+        }
+        return(result_string);
+    }
+    else if (data_type == FLOAT) {
+        float *payload = query->operator_fields.print_operator.payload;
+        int j =0;
+        for (int i = 0; i < num_tuples; ++i) {
             //convert result to char*
             char* c = malloc(sizeof(char)*10);
-
-            snprintf(c, sizeof(int), "%d, ", payload[i]);
-            result_string = concat(result_string, c);
-
-
+            if (num_tuples > 1) {
+                float temp_float = payload[i];
+                snprintf(c, sizeof(float), "%6.4f, ", temp_float);
+                result_string = concat(result_string, c);
+            }
+            //case where result is a single float
+            else if (num_tuples == 1) {
+                float temp_float = payload[i];
+                snprintf(c, sizeof(float), "%6.6f", temp_float);
+                result_string = c;
+            }
         }
         return(result_string);
     }
@@ -294,17 +328,112 @@ char* print_result(DbOperator* query) {
  * Given a column return the average
  */
 
-//float average_col(DbOperator query){
-//    int num_tuples = query.operator_fields.avg_operator.num_tuples;
-//    int total = 0;
-//    int* col = query.operator_fields.avg_operator.payload;
-//    for (int i =0; i < num_tuples; ++i){
-//        total += col[i];
-//    }
-//    float average = total/num_tuples;
-//    return (average);
-//}
+Result* average_col(DbOperator* query){
+    int num_tuples = query->operator_fields.avg_operator.num_tuples;
+    Result* result = calloc(sizeof(Result), num_tuples);
+    result->payload = calloc(sizeof(float), 1);
+    int total = 0;
+    int* col = query->operator_fields.avg_operator.payload;
+    for (int i =0; i < num_tuples; ++i){
+        total += col[i];
+    }
+    float* average = calloc(sizeof(float), 1);
+    average[0] = (float)total/(float)num_tuples;
+    result->num_tuples = 1;
+    result->data_type = FLOAT;
+    result->payload = average;
+    return (result);
+}
 
+
+Result* sum_col(DbOperator* query){
+    int num_tuples = query->operator_fields.sum_operator.num_tuples;
+    Result* result = calloc(sizeof(Result), num_tuples);
+    result->payload = calloc(sizeof(float), 1);
+    int total = 0;
+    int* col = query->operator_fields.sum_operator.payload;
+    for (int i =0; i < num_tuples; ++i){
+        total += col[i];
+    }
+    int* sum = calloc(sizeof(int), 1);
+    sum[0] = total;
+    result->num_tuples = 1;
+    result->data_type = INT;
+    result->payload = sum;
+    return (result);
+}
+
+
+Result* add(DbOperator* query){
+    int num_tuples = query->operator_fields.add_operator.num_tuples;
+    Result* result = calloc(sizeof(Result), num_tuples);
+    result->payload = calloc(sizeof(int), num_tuples);
+    int* total = calloc(sizeof(int),num_tuples);
+    int* col1 = query->operator_fields.add_operator.payload1;
+    int* col2 = query->operator_fields.add_operator.payload2;
+    for (int i =0; i < num_tuples; ++i){
+        total[i] += col1[i]+col2[i];
+    }
+    result->num_tuples = num_tuples;
+    result->data_type = INT;
+    result->payload = total;
+    return (result);
+}
+
+Result* sub(DbOperator* query){
+    int num_tuples = query->operator_fields.sub_operator.num_tuples;
+    Result* result = calloc(sizeof(Result), num_tuples);
+    result->payload = calloc(sizeof(int), num_tuples);
+    int* total = calloc(sizeof(int),num_tuples);
+    int* col1 = query->operator_fields.sub_operator.payload1;
+    int* col2 = query->operator_fields.sub_operator.payload2;
+    for (int i =0; i < num_tuples; ++i){
+        total[i] += col1[i]-col2[i];
+    }
+    result->num_tuples = num_tuples;
+    result->data_type = INT;
+    result->payload = total;
+    return (result);
+}
+
+
+Result* max(DbOperator* query){
+    int num_tuples = query->operator_fields.max_operator.num_tuples;
+    Result* result = calloc(sizeof(Result), num_tuples);
+    result->payload = calloc(sizeof(float), 1);
+    int* col = query->operator_fields.max_operator.payload;
+    int* max = calloc(sizeof(int), num_tuples);
+    max[0] = col[0];
+
+    for (int i =0; i < num_tuples; ++i){
+        if (col[i] > max[0] ) {
+            max[0] = col[i];
+        }
+    }
+    result->num_tuples = 1;
+    result->data_type = INT;
+    result->payload = max;
+    return (result);
+}
+
+Result* min(DbOperator* query){
+    int num_tuples = query->operator_fields.max_operator.num_tuples;
+    Result* result = calloc(sizeof(Result), num_tuples);
+    result->payload = calloc(sizeof(float), 1);
+    int* col = query->operator_fields.max_operator.payload;
+    int* min = calloc(sizeof(int), num_tuples);
+    min[0] = col[0];
+
+    for (int i =0; i < num_tuples; ++i){
+        if (col[i] < min[0] ) {
+            min[0] = col[i];
+        }
+    }
+    result->num_tuples = 1;
+    result->data_type = INT;
+    result->payload = min;
+    return (result);
+}
 
 
 

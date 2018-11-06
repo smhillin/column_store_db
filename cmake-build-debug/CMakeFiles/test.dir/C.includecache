@@ -26,21 +26,7 @@ message.h
 client_context.h
 ../src/include/client_context.h
 
-../src/include/utils.h
-stdarg.h
--
-stdio.h
--
-
 /Users/Shaun/CLionProjects/final_project/archived/hash_table.h
-
-/Users/Shaun/CLionProjects/final_project/src/client_context.c
-client_context.h
-/Users/Shaun/CLionProjects/final_project/src/client_context.h
-mydb_manager.h
-/Users/Shaun/CLionProjects/final_project/src/mydb_manager.h
-util.h
-/Users/Shaun/CLionProjects/final_project/src/util.h
 
 /Users/Shaun/CLionProjects/final_project/src/main.c
 stdio.h
@@ -55,32 +41,4 @@ mydb_manager.h
 /Users/Shaun/CLionProjects/final_project/archived/hash_table.h
 parse.h
 /Users/Shaun/CLionProjects/final_project/src/parse.h
-
-/Users/Shaun/CLionProjects/final_project/src/mydb_manager.c
-mydb_manager.h
-/Users/Shaun/CLionProjects/final_project/src/mydb_manager.h
-client_context.h
-/Users/Shaun/CLionProjects/final_project/src/client_context.h
-utils.h
-/Users/Shaun/CLionProjects/final_project/src/utils.h
-
-/Users/Shaun/CLionProjects/final_project/src/parse.c
-string.h
--
-stdbool.h
--
-stddef.h
--
-stdlib.h
--
-ctype.h
--
-parse.h
-/Users/Shaun/CLionProjects/final_project/src/parse.h
-utils.h
-/Users/Shaun/CLionProjects/final_project/src/utils.h
-client_context.h
-/Users/Shaun/CLionProjects/final_project/src/client_context.h
-mydb_manager.h
-/Users/Shaun/CLionProjects/final_project/src/mydb_manager.h
 

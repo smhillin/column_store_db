@@ -32,22 +32,6 @@ stdarg.h
 stdio.h
 -
 
-/Users/Shaun/CLionProjects/final_project/src/client_context.c
-client_context.h
-/Users/Shaun/CLionProjects/final_project/src/client_context.h
-mydb_manager.h
-/Users/Shaun/CLionProjects/final_project/src/mydb_manager.h
-util.h
-/Users/Shaun/CLionProjects/final_project/src/util.h
-
-/Users/Shaun/CLionProjects/final_project/src/mydb_manager.c
-mydb_manager.h
-/Users/Shaun/CLionProjects/final_project/src/mydb_manager.h
-client_context.h
-/Users/Shaun/CLionProjects/final_project/src/client_context.h
-utils.h
-/Users/Shaun/CLionProjects/final_project/src/utils.h
-
 /Users/Shaun/CLionProjects/final_project/src/parse.c
 string.h
 -

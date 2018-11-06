@@ -130,8 +130,7 @@ typedef enum ComparatorType {
 typedef struct Result {
     size_t num_tuples;
     DataType data_type;
-    //void *payload;
-    int* payload;
+    void* payload;
 } Result;
 
 /*
@@ -202,6 +201,11 @@ typedef enum OperatorType {
     FETCH,
     PRINT,
     AVG,
+    SUM,
+    ADD,
+    SUB,
+    MAX,
+    MIN,
     LOAD,
     SHUTDOWN,
 } OperatorType;
@@ -253,7 +257,46 @@ typedef struct AvgOperator {
     size_t num_tuples;
     DataType data_type;
     int* payload;
+    char* pooledVar;
 } AvgOperator;
+
+typedef struct SumOperator {
+    size_t num_tuples;
+    DataType data_type;
+    int* payload;
+    char* pooledVar;
+} SumOperator;
+
+
+typedef struct AddOperator {
+    size_t num_tuples;
+    DataType data_type;
+    int* payload1;
+    int* payload2;
+    char* pooledVar;
+} AddOperator;
+
+typedef struct SubOperator {
+    size_t num_tuples;
+    DataType data_type;
+    int* payload1;
+    int* payload2;
+    char* pooledVar;
+} SubOperator;
+
+typedef struct MaxOperator {
+    size_t num_tuples;
+    DataType data_type;
+    int* payload;
+    char* pooledVar;
+} MaxOperator;
+
+typedef struct MinOperator {
+    size_t num_tuples;
+    DataType data_type;
+    int* payload;
+    char* pooledVar;
+} MinOperator;
 
 /*
  * DbOperator holds the following fields:
@@ -270,6 +313,11 @@ typedef union OperatorFields {
     FetchOperator fetch_operator;
     PrintOperator print_operator;
     AvgOperator avg_operator;
+    SumOperator sum_operator;
+    AddOperator add_operator;
+    SubOperator sub_operator;
+    MaxOperator max_operator;
+    MinOperator min_operator;
 } OperatorFields;
 
 typedef struct DbOperator {
@@ -357,6 +405,16 @@ void* store_var(char* var_name, Result* result);
 
 char* print_result(DbOperator* query);
 
-float average_col(DbOperator query);
+Result* average_col(DbOperator* query);
+
+Result* sum_col(DbOperator* query);
+
+Result* add(DbOperator* query);
+
+Result* sub(DbOperator* query);
+
+Result* max(DbOperator* query);
+
+Result* min(DbOperator* query);
 
 #endif //FINAL_PROJECT_MYDB_MANAGER_H
