@@ -1,5 +1,5 @@
 
-# MY CS165 Project
+# Column Store Databas
 
 
 ## Introduction
@@ -8,42 +8,8 @@ mydb_manager.c - the core functions for managing db are
 parse.c - core files for parsing DSL functions 
 "shutdown" dsl command writes the db to to the DB_FILE defined in mydb_manager.c
 
-## TODO
-
-- valgrind memcheck
-- select statements
-- get dsl command line working
-- multi core processor
-
-
-
-
-
-
-
-
-
-# CS165 Fall 2018 Starter Code
-
-## Introduction
-
-This repository contains the distribution code for CS165 Fall 2018.
-More details about the project: http://daslab.seas.harvard.edu/classes/cs165/project.html
-
-
-Please make sure that your project/repo are set to private.
-You'll still need to share read access with the cs165-staff group.
-
-We recommend that throughout the semester, you make git tags at each of
-the checkpoints so that it's easier to manage the progress of your project.
-
 
 ## Client-Server code
-We have included a simple unix socket implementation of an interactive
-client-server database implementation. You are recommended to use it
-as a foundation for your own database implementation. We have also
-provided a sample makefile that should be compatible with most machines.
-You are free to use your own makefile as well.
 
 You can build both the client and server using:
 
@@ -82,7 +48,7 @@ process it, and then send back the result if it was asked to.
 
 ## Logging
 
-We have included a couple useful logging functions in utils.c.
+I have included a couple useful logging functions in utils.c.
 These logging functions depend on #ifdef located within the code.
 There are multiple ways to enable logging. One way is by adding your own
 definition at the top of the file:

@@ -66,23 +66,25 @@ char* execute_DbOperator(DbOperator* query) {
         Result* result = sum_col(query);
         store_var(query->operator_fields.sum_operator.pooledVar,result);
     }
-
-    else if (query->type == SUB) {
+    else if (query->type == ADD) {
         Result* result = add(query);
+        store_var(query->operator_fields.add_operator.pooledVar,result);
+    }
+    else if (query->type == SUB) {
+        Result* result = sub(query);
         store_var(query->operator_fields.sub_operator.pooledVar,result);
     }
     else if (query->type == MAX) {
-        Result* result = add(query);
-        store_var(query->operator_fields.sub_operator.pooledVar,result);
+        Result* result = max(query);
+        store_var(query->operator_fields.max_operator.pooledVar,result);
     }
     else if (query->type == MIN) {
-        Result* result = add(query);
-        store_var(query->operator_fields.sub_operator.pooledVar,result);
+        Result* result = min(query);
+        store_var(query->operator_fields.min_operator.pooledVar,result);
     }
     else if (query->type == PRINT) {
         char* results = print_result(query);
         printf("%s\n", results);
-        return (results);
     }
 
     free(query);

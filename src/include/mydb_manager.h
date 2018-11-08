@@ -250,7 +250,7 @@ typedef struct FetchOperator {
 typedef struct PrintOperator {
     size_t num_tuples;
     DataType data_type;
-    int* payload;
+    void* payload;
 } PrintOperator;
 
 typedef struct AvgOperator {
@@ -401,7 +401,7 @@ void relational_insert(DbOperator* query);
 
 void delete_columns(Table *table);
 
-void* store_var(char* var_name, Result* result);
+int store_var(char* var_name, Result* result);
 
 char* print_result(DbOperator* query);
 
@@ -416,5 +416,7 @@ Result* sub(DbOperator* query);
 Result* max(DbOperator* query);
 
 Result* min(DbOperator* query);
+
+
 
 #endif //FINAL_PROJECT_MYDB_MANAGER_H

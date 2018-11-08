@@ -99,16 +99,16 @@ char* strip_command(char* tokenizer){
 }
 
 
-char* strip_var(char* tokenizer){
-    char* stripped_token[MAX_SIZE_NAME];
-    int j = 0;
-    for (int i=0; tokenizer[i] != '='; ++i){
-      stripped_token[j] = tokenizer[i];
-      ++j;
-      return(stripped_token);
-    }
-    return (0);
-}
+//char* strip_var(char* tokenizer){
+//    char* stripped_token[MAX_SIZE_NAME];
+//    int j = 0;
+//    for (int i=0; tokenizer[i] != '='; ++i){
+//      strcpy(stripped_token[j],tokenizer[i]);
+//      ++j;
+//      return(stripped_token);
+//    }
+//    return (0);
+//}
 /*
  * Strips url from load command
  */
@@ -155,7 +155,7 @@ char* concat(const char *s1, const char *s2)
 /*
  * Returns 0 if a string contains a .
  */
-int* cont_per(char* str){
+int cont_per(char* str){
     for(int i=0; i < sizeof(str); ++i){
         if (str[i] == '.' ){
             return 0;
@@ -163,6 +163,71 @@ int* cont_per(char* str){
     }
     return 1;
 }
+
+
+void retrieve_results(Result* result1, Result* result2, char* temp_name1, char* temp_name2){
+    //check to see if we need to retrieve a column or projection
+    if (cont_per(temp_name1) == 0)  {
+
+        //  strip out table name only
+        char *table_name = strip_table(temp_name1);
+
+        //strip out column name
+        char *fetch_col = strip_col(temp_name1);
+
+        // lookup the table and make sure it exists.
+        Table *insert_table = fetch_table(table_name);
+
+        Column* col = fetch_column(fetch_table(table_name),fetch_col);
+
+
+
+        result1->payload = col->data;
+
+        result1->data_type = INT;
+
+        result1->num_tuples = col->col_size;
+
+    }
+
+    else{
+        result1  = fetch_poolvar(temp_name1);
+    }
+
+    //check to see if we need to retrieve a column or projection
+    if (cont_per(temp_name2) == 0)  {
+
+        //  strip out table name only
+        char *table_name = strip_table(temp_name2);
+
+        //strip out column name
+        char *fetch_col = strip_col(temp_name2);
+
+        // lookup the table and make sure it exists.
+        Table *insert_table = fetch_table(table_name);
+
+        Column* col = fetch_column(fetch_table(table_name),fetch_col);
+
+
+
+        result2->payload = col->data;
+
+        result2->data_type = INT;
+
+        result2->num_tuples = col->col_size;
+
+
+    }
+
+
+    else {
+        //retrieve temporary projection
+
+        result2  = fetch_poolvar(temp_name2);
+
+    }
+}
+
 
 /**
 *  Getting started hint:

@@ -609,7 +609,7 @@ DbOperator* parse_fetch(char* var_name, char* query_command, message* send_messa
         dbo->operator_fields.fetch_operator.table = fetch_table(table_name);
         dbo->operator_fields.fetch_operator.col = fetch_column(fetch_table(table_name),fetch_col);
         //creates a position vector
-        dbo->operator_fields.fetch_operator.pos = (int*)(result->payload);
+        dbo->operator_fields.fetch_operator.pos = (int*)result->payload;
         dbo->operator_fields.fetch_operator.num_tuples = result->num_tuples;
         return dbo;
     } else {
@@ -796,47 +796,8 @@ DbOperator* parse_add(char* var_name, char* query_command, message* send_message
             return NULL;
         }
 
-
-        //check to see if we need to retrieve a column or projection
-        if (cont_per(temp_name1) == 0)  {
-
-            //  strip out table name only
-            char *table_name = strip_table(temp_name1);
-
-            //strip out column name
-            char *fetch_col = strip_col(temp_name1);
-
-            // lookup the table and make sure it exists.
-            Table *insert_table = fetch_table(table_name);
-
-            Column* col = fetch_column(fetch_table(table_name),fetch_col);
-
-
-
-            result1->payload = col->data;
-
-            result1->data_type = INT;
-
-            result1->num_tuples = col->col_size;
-
-            if (insert_table == NULL) {
-                send_message->status = OBJECT_NOT_FOUND;
-                return NULL;
-            }
-
-        }
-
-        else {
-            //retrieve temporary projection
-
-            result1  = fetch_poolvar(temp_name1);
-
-            result2  = fetch_poolvar(temp_name2);
-
-        }
-
-
-
+        //retrieves the projections and columns
+        retrieve_results(result1, result2, temp_name1, temp_name2);
 
 
 
@@ -890,45 +851,8 @@ DbOperator* parse_sub(char* var_name, char* query_command, message* send_message
         }
 
 
-        //check to see if we need to retrieve a column or projection
-        if (cont_per(temp_name1) == 0)  {
-
-            //  strip out table name only
-            char *table_name = strip_table(temp_name1);
-
-            //strip out column name
-            char *fetch_col = strip_col(temp_name1);
-
-            // lookup the table and make sure it exists.
-            Table *insert_table = fetch_table(table_name);
-
-            Column* col = fetch_column(fetch_table(table_name),fetch_col);
-
-
-
-            result1->payload = col->data;
-
-            result1->data_type = INT;
-
-            result1->num_tuples = col->col_size;
-
-            if (insert_table == NULL) {
-                send_message->status = OBJECT_NOT_FOUND;
-                return NULL;
-            }
-
-        }
-
-        else {
-            //retrieve temporary projection
-
-            result1  = fetch_poolvar(temp_name1);
-
-            result2  = fetch_poolvar(temp_name2);
-
-        }
-
-
+        //retrieves the projections and columns
+        retrieve_results(result1, result2, temp_name1, temp_name2);
 
 
 

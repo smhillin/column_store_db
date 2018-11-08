@@ -22,6 +22,7 @@ char* concat(const char *s1, const char *s2);
 
 char* strip_var(char* tokenizer);
 
-int* cont_per(char* str);
+int cont_per(char* str);
 
+void retrieve_results(Result* result1, Result* result2, char* temp_name1, char* temp_name2);
 #endif

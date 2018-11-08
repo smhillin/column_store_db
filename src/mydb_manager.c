@@ -147,10 +147,10 @@ void relational_insert(DbOperator* query) {
 /*
  * Return a positions array of col given a column and low and high
  */
-void* select_high_low(Result* result,Column* col,int low,int high){
+void select_high_low(Result* result,Column* col,int low,int high){
     int j=0;
-    int* temp_p = (int*)result->payload;
-    for (int i=0; i < col->col_size; ++i){
+    int* temp_p = calloc(sizeof(int), col->col_size);
+    for (int i=0; i < col->col_size; ++i) {
         if (col->data[i] < high && col->data[i] > low) {
             temp_p[j] = i;
             result->num_tuples +=1;
@@ -158,16 +158,17 @@ void* select_high_low(Result* result,Column* col,int low,int high){
         }
     }
     result->data_type = INT;
-    result->payload = temp_p;
+    result->payload = (void*)temp_p;
+
 }
 
 
 /*
  * Return a positions array of col given a column and low
  */
-void* select_low(Result* result,Column* col,int low){
+void select_low(Result* result,Column* col,int low){
     int j=0;
-    int* temp_p = (int*)result->payload;
+    int* temp_p = calloc(sizeof(int), col->col_size);
     for (int i=0; i < col->col_size; ++i){
         if (col->data[i] > low) {
             temp_p[j] = i;
@@ -176,7 +177,7 @@ void* select_low(Result* result,Column* col,int low){
         }
     }
     result->data_type = INT;
-    result->payload = temp_p;
+    result->payload = (void*)temp_p;
 
 }
 
@@ -184,9 +185,9 @@ void* select_low(Result* result,Column* col,int low){
  * Return a positions array of col given a column and high
  */
 
-void* select_high(Result* result,Column* col,int high){
+void select_high(Result* result,Column* col,int high){
     int j=0;
-    int* temp_p = (int*)result->payload;
+    int* temp_p = calloc(sizeof(int), col->col_size);
     for (int i=0; i < col->col_size; ++i){
         if (col->data[i] < high) {
             temp_p[j] = i;
@@ -195,19 +196,27 @@ void* select_high(Result* result,Column* col,int high){
         }
     }
     result->data_type = INT;
-    result->payload = temp_p;
+    result->payload =(void*)temp_p;
 
 }
 
 /*
  * Stores temporary variable in variable pool
  */
-void* store_var(char* var_name, Result* result){
+int store_var(char* var_name, Result* result){
     PooledVar* var= malloc(sizeof(PooledVar));
     var->result = result;
     strcpy(var->name,var_name);
+    //check for existing variable if so replace, if not create new pooledvar
+    for(int i =0; i < varPool->pool_size; ++i){
+        if (strcmp(varPool->pooledVar[i].name, var_name)==0){
+            varPool->pooledVar[i] = *var;
+            return(0);
+        }
+    }
     varPool->pooledVar[varPool->pool_size] = *var;
     varPool->pool_size += 1;
+    return(0);
 }
 
 /*
@@ -217,11 +226,9 @@ Result* select_val(DbOperator* query) {
     char* low_c = query->operator_fields.select_operator.low;
     char* high_c = query->operator_fields.select_operator.high;
     Column* col = query->operator_fields.select_operator.col;
-    int* temp_pos;
     //initialize result vector
     Result* result = malloc(sizeof(result));
     result->num_tuples = 0;
-    result->payload = calloc(sizeof(int),INIT_COL_SIZE);
     //temporary position array
     if (strcmp(low_c,"null")==0){
         int high = atoi(query->operator_fields.select_operator.high);
@@ -256,7 +263,8 @@ Result* fetch(DbOperator* query) {
        result->num_tuples += 1;
     }
     result->data_type = INT;
-    result->payload = temp_p;
+    result->payload = (void*)temp_p;
+
     return(result);
 
 }
@@ -280,10 +288,8 @@ char* print_result(DbOperator* query) {
     DataType data_type = query->operator_fields.print_operator.data_type;
     int result_size = 0;
     if (data_type == INT) {
-        int *payload = query->operator_fields.print_operator.payload;
-        int j =0;
+        int *payload =  (int*)query->operator_fields.print_operator.payload;
         for (int i = 0; i < num_tuples; ++i) {
-
             if (num_tuples > 1) {
                 //convert result to char*
                 char *c = malloc(sizeof(char) * 10);
@@ -299,10 +305,10 @@ char* print_result(DbOperator* query) {
 
 
         }
-        return(result_string);
+
     }
     else if (data_type == FLOAT) {
-        float *payload = query->operator_fields.print_operator.payload;
+        float *payload = (float*)query->operator_fields.print_operator.payload;
         int j =0;
         for (int i = 0; i < num_tuples; ++i) {
             //convert result to char*
@@ -319,8 +325,8 @@ char* print_result(DbOperator* query) {
                 result_string = c;
             }
         }
-        return(result_string);
     }
+    return(result_string);
 }
 
 
